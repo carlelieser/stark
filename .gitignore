@@ -1,9 +1,3 @@
-# Claude Code local settings (user-specific, not for sharing)
 .claude/settings.local.json
-
-# STARK runtime state (user-specific)
-.stark/solutions/
-.stark/learning/
-
-# IDE
+.stark/
 .idea/
