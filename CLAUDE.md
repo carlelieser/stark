@@ -2,7 +2,7 @@
 
 ## Development Workflow
 
-1. Edit commands in `.claude/commands/stark/`
+1. Edit commands in `.claude-plugin/commands/`
 2. Commit and push to publish
 
 ## Commands
