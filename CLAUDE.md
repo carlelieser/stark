@@ -2,9 +2,8 @@
 
 ## Development Workflow
 
-1. Edit commands in `src/`
-2. Deploy: `./scripts/deploy.sh`
-3. Commit and push to publish
+1. Edit commands in `.claude/commands/stark/`
+2. Commit and push to publish
 
 ## Commands
 
@@ -21,6 +20,8 @@
 | `/stark:status` | Show solution status |
 | `/stark:list` | List all solutions |
 | `/stark:auto` | Autonomous end-to-end |
+| `/stark:setup` | Initial setup |
+| `/stark:cleanup` | Multi-agent cleanup analysis |
 | `/stark:learn` | Capture feedback |
 | `/stark:learn-history` | View learning history |
 | `/stark:learn-propose` | Generate improvements |
