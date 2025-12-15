@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "stark",
-      "source": "./",
+      "source": "./.claude-plugin/",
       "description": "Structured problem-solving framework with autonomous execution and self-healing learning",
       "version": "1.0.0",
       "strict": false
