@@ -105,30 +105,29 @@ Get started with STARK in under 5 minutes.
 
 ### Your First STARK Solution
 
-Let's create a data validation utility function using STARK's structured approach. This example demonstrates how STARK guides you from problem to verified solution in five simple commands.
+One command. That's all you need.
 
 ```bash
-# Step 1: Initialize STARK (first time only)
-/stark:setup
-
-# Step 2: Create a solution (note the ID that's returned)
-/stark:new "Create a data validation utility function with error handling"
-
-# Step 3: Plan your approach (replace with your actual solution ID)
-/stark:plan azure-falcon-7k
-
-# Step 4: Execute the task (use the task name from your plan)
-/stark:run azure-falcon-7k "Implement validation utility"
-
-# Step 5: Complete and finalize
-/stark:complete azure-falcon-7k
+/stark:auto "Create a data validation utility function with error handling"
 ```
 
-### What You Just Did
+STARK handles everything: analyzes your problem, plans the approach, executes tasks, verifies completion, and captures learnings. You watch while it works.
 
-You just experienced STARK's core workflow: **analyze → plan → execute → verify → complete**. The `/stark:new` command analyzed your problem and created a solution with a unique ID. The `/stark:plan` command guided you through defining success criteria, designing your approach, and breaking work into tasks. The `/stark:run` command executed your task with full change tracking. Finally, `/stark:complete` verified all acceptance criteria and captured learnings.
+### Want More Control?
 
-All decisions, plans, and outcomes are preserved in `.stark/solutions/[your-solution-id]/`, making your work fully resumable and providing a complete audit trail.
+Use the manual workflow for step-by-step guidance:
+
+```bash
+/stark:setup                              # First time only
+/stark:new "Your problem description"     # Creates solution (note the ID)
+/stark:plan <solution-id>                 # Plan your approach
+/stark:run <solution-id> "Task name"      # Execute tasks
+/stark:complete <solution-id>             # Finalize and capture learnings
+```
+
+### What Happens Behind the Scenes
+
+Both approaches follow STARK's core workflow: **analyze → plan → execute → verify → complete**. All decisions, plans, and outcomes are preserved in `.stark/solutions/<solution-id>/`, making your work fully resumable with a complete audit trail.
 
 ### Next Steps
 
