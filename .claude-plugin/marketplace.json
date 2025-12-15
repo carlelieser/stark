@@ -16,7 +16,7 @@
         "repo": "carlelieser/stark"
       },
       "description": "Structured problem-solving framework with autonomous execution and self-healing learning",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "strict": false
     }
   ]

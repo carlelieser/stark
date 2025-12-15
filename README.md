@@ -12,7 +12,7 @@ Complex problems rarely fail from lack of effort—they fail from lack of struct
 
 ### What is STARK?
 
-STARK is a five-phase problem-solving framework built directly into your Claude Code workflow. Rather than manually following a methodology, you invoke commands that apply structured thinking for you. Each phase—Situation analysis, Target definition, Approach design, Resource mobilization, and Knowledge integration—guides you from problem understanding through execution to learning capture.
+STARK is a five-phase problem-solving framework built directly into your Claude Code workflow. Rather than manually following a methodology, you invoke commands that apply structured thinking for you. Each phase—Situation analysis, Target definition, Approach design, Resource mobilization, and Knowledge integration—guides you from problem understanding through execution to learning capture. (For the complete methodology, see [SYSTEM.md](.stark/SYSTEM.md).)
 
 The framework integrates autonomous execution (/stark:auto handles the entire workflow), built-in verification (every task must pass acceptance criteria), and a self-healing learning system that improves its own prompts based on execution feedback. Solutions are fully documented and resumable, with every decision, deliberation, and outcome preserved in structured markdown files.
 
