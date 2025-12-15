@@ -1,13 +1,13 @@
 {
   "name": "stark",
   "description": "STARK - Structured Problem-Solving Framework",
-  "author": "carlelieser",
+  "owner": "carlelieser",
   "plugins": [
     {
       "name": "stark",
       "description": "Structured problem-solving framework with autonomous execution and self-healing learning",
       "version": "1.0.0",
-      "source": "."
+      "source": "./"
     }
   ]
 }
