@@ -1,13 +1,20 @@
 {
   "name": "stark",
-  "description": "STARK - Structured Problem-Solving Framework",
-  "owner": "carlelieser",
+  "owner": {
+    "name": "carlelieser",
+    "email": "carlelieser@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "STARK - Structured Problem-Solving Framework",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "stark",
+      "source": "./",
       "description": "Structured problem-solving framework with autonomous execution and self-healing learning",
       "version": "1.0.0",
-      "source": "./"
+      "strict": false
     }
   ]
 }
