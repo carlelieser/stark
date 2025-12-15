@@ -982,7 +982,7 @@ Additional documentation and references.
 
 MIT License
 
-Copyright (c) 2025 Carl Elieser
+Copyright (c) 2025 Carlos
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1006,7 +1006,7 @@ SOFTWARE.
 
 ## Credits
 
-**Created by:** [Carl Elieser](https://github.com/carlelieser)
+**Created by:** [Carlos](https://github.com/carlelieser)
 
 **Acknowledgments:**
 
