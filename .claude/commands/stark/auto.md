@@ -110,6 +110,19 @@ Task tool:
     Finalize the solution and report the summary.
 ```
 
+### /stark:cleanup (Quality Gate)
+```
+Task tool:
+  subagent_type: "general-purpose"
+  prompt: |
+    Execute /stark:cleanup
+
+    Run multi-agent cleanup analysis on all uncommitted changes.
+    This analyzes code quality, config validity, documentation, and consistency.
+
+    Report the verdict (SATISFACTORY / NEEDS WORK / UNSATISFACTORY) and any critical issues found.
+```
+
 ---
 
 ## State Detection
@@ -124,9 +137,11 @@ Read `.stark/<id>/solution.md` directly (use Read tool) to check state:
 | Task in progress | Task folder exists without VERIFICATION.md | Continue task loop |
 | Task needs verification | EXECUTION.md exists | Delegate `/stark:verify` |
 | Task verified | VERIFICATION.md shows PASS | Move to next task |
-| All tasks done | All tasks verified | Delegate `/stark:complete` |
+| All tasks done | All tasks verified | Delegate `/stark:cleanup` (quality gate) |
+| Cleanup passed | Cleanup verdict = SATISFACTORY | Delegate `/stark:complete` |
+| Cleanup failed | Cleanup verdict = NEEDS WORK/UNSATISFACTORY | Fix issues, re-run cleanup |
 | Complete | Status: "Complete" + `[x] Execution complete` | **RESOLVE** |
-| Error | 3 failures on same task | **ABORT** |
+| Error | 3 failures on same task OR 3 cleanup failures | **ABORT** |
 
 ---
 
@@ -143,6 +158,28 @@ For each task in the solution, delegate these commands in sequence:
 5. **Delegate** `/stark:verify <id> "<task>"` - Verify completion
    - If FAIL → Back to step 1 (max 3 attempts)
    - If PASS → Next task
+
+---
+
+## Cleanup Loop (after all tasks verified)
+
+Once ALL tasks are verified, run the cleanup quality gate:
+
+1. **Delegate** `/stark:cleanup` - Multi-agent analysis of all changes
+2. **Check verdict**:
+   - If SATISFACTORY → Proceed to `/stark:complete`
+   - If NEEDS WORK or UNSATISFACTORY → Address critical issues
+3. **If not satisfactory**:
+   - Fix critical issues identified by cleanup
+   - Re-delegate `/stark:cleanup` to re-analyze
+   - Max 3 cleanup iterations before proceeding anyway
+4. **After cleanup passes** → Delegate `/stark:complete`
+
+The cleanup phase ensures:
+- Code quality across all changes
+- Configuration validity
+- Documentation accuracy
+- Cross-file consistency
 
 ---
 
@@ -164,6 +201,7 @@ After each delegation, report:
 |-----------|--------|
 | Status = "Complete" AND `[x] Execution complete` | **RESOLVE** - Report success |
 | Task failed 3 times | **ABORT** - Report failure |
+| Cleanup failed 3 times | Proceed with warning, delegate `/stark:complete` |
 | Max 100 heartbeats reached | **ABORT** - Report timeout |
 | Unrecoverable error from subagent | **ABORT** - Report error |
 
@@ -182,6 +220,11 @@ Execute the heartbeat loop:
    - Sleep 2 seconds (`sleep 2` via Bash)
    - Repeat
 
-3. **Resolve**: When state is Complete, report final summary.
+3. **Cleanup Gate**: After all tasks are verified:
+   - Delegate `/stark:cleanup` to analyze all changes
+   - If not satisfactory, fix critical issues and re-run
+   - Once satisfactory (or after 3 attempts), proceed to complete
+
+4. **Resolve**: When state is Complete, report final summary.
 
 **START NOW**: Delegate `/stark:new` to a subagent for the problem: "$ARGUMENTS"
