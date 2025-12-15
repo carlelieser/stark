@@ -8,5 +8,5 @@
   "repository": "https://github.com/carlelieser/stark",
   "license": "MIT",
   "keywords": ["problem-solving", "planning", "autonomous", "framework"],
-  "commands": ["./commands/"]
+  "commands": ["../.claude/commands/"]
 }
