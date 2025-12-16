@@ -58,87 +58,12 @@ Task: Analyze [list config files]. Review for: 1) Syntax (valid YAML/JSON/TOML) 
 
 ### Documentation Reviewer
 ```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    You are a Documentation Reviewer. Review these documentation changes for:
-
-    **Files to analyze:**
-    [List doc files from Phase 1]
-
-    **Analysis Criteria:**
-    1. Accuracy - Content matches current implementation
-    2. Completeness - All features/APIs documented
-    3. Clarity - Easy to understand, well-organized
-    4. Consistency - Style, formatting, terminology
-    5. Currency - No outdated references, correct versions
-
-    **Output Format (JSON):**
-    ```json
-    {
-      "agent": "documentation-reviewer",
-      "findings": [
-        {
-          "file": "path/to/README.md",
-          "line": 100,
-          "severity": "critical|moderate|minor",
-          "category": "accuracy|completeness|clarity|consistency|currency",
-          "issue": "Description of the issue",
-          "recommendation": "How to fix it"
-        }
-      ],
-      "summary": {
-        "critical": 0,
-        "moderate": 0,
-        "minor": 0,
-        "overall_quality": "good|acceptable|needs-work|poor"
-      }
-    }
-    ```
-
-    Read the files and provide your analysis.
+Task: Analyze [list doc files]. Review for: 1) Accuracy (matches implementation) 2) Completeness (all features documented) 3) Clarity (understandable, organized) 4) Consistency (style, terminology) 5) Currency (no outdated refs). Output JSON: {"agent": "documentation-reviewer", "findings": [{file, line, severity, category, issue, recommendation}], "summary": {critical, moderate, minor, overall_quality}}
 ```
 
 ### Consistency Checker
 ```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    You are a Consistency Checker. Review ALL changes holistically for:
-
-    **All changed files:**
-    [List all files from Phase 1]
-
-    **Analysis Criteria:**
-    1. Cross-file consistency - Do changes align across files?
-    2. API contracts - Do interfaces match implementations?
-    3. Import/export alignment - No broken references?
-    4. Naming consistency - Same concepts use same names?
-    5. Pattern adherence - Following established codebase patterns?
-
-    **Output Format (JSON):**
-    ```json
-    {
-      "agent": "consistency-checker",
-      "findings": [
-        {
-          "files": ["file1.py", "file2.py"],
-          "severity": "critical|moderate|minor",
-          "category": "cross-file|api|imports|naming|patterns",
-          "issue": "Description of inconsistency",
-          "recommendation": "How to resolve"
-        }
-      ],
-      "summary": {
-        "critical": 0,
-        "moderate": 0,
-        "minor": 0,
-        "overall_consistency": "good|acceptable|needs-work|poor"
-      }
-    }
-    ```
-
-    Read the files and provide your analysis.
+Task: Analyze [list all files]. Review for: 1) Cross-file consistency 2) API contracts match 3) Import/export alignment 4) Naming consistency 5) Pattern adherence. Output JSON: {"agent": "consistency-checker", "findings": [{files, severity, category, issue, recommendation}], "summary": {critical, moderate, minor, overall_consistency}}
 ```
 
 ---
