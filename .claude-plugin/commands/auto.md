@@ -60,71 +60,43 @@ Use Task tool (subagent_type: "general-purpose") for each command:
 
 ## State Detection
 
-Read `.stark/<id>/solution.md` directly (use Read tool) to check state:
+Read `.stark/<id>/solution.md` to determine next action:
 
-| State | How to Detect | Next Action |
-|-------|---------------|-------------|
-| Not started | No `.stark/` folder or no solution.md | Delegate `/stark:new` |
-| New | Status: "New" | Delegate `/stark:plan` |
-| Planned | Status: "Planning Complete" | Delegate `/stark:task` for first task |
-| Task in progress | Task folder exists without VERIFICATION.md | Continue task loop |
-| Task needs verification | EXECUTION.md exists | Delegate `/stark:verify` |
-| Task verified | VERIFICATION.md shows PASS | Move to next task |
-| All tasks done | All tasks verified | Delegate `/stark:cleanup` (quality gate) |
-| Cleanup passed | Cleanup verdict = SATISFACTORY | Delegate `/stark:complete` |
-| Cleanup failed | Cleanup verdict = NEEDS WORK/UNSATISFACTORY | Fix issues, re-run cleanup |
-| Complete | Status: "Complete" + `[x] Execution complete` | **RESOLVE** |
-| Error | 3 failures on same task OR 3 cleanup failures | **ABORT** |
-
----
-
-## Task Loop (for each task)
-
-For each task in the solution, delegate these commands in sequence:
-
-1. **Delegate** `/stark:task <id> "<task>"` - Create task report
-2. **Delegate** `/stark:think <id> "<task>"` - Deliberate on approach
-3. **Delegate** `/stark:ready <id> "<task>"` - Check readiness
-   - If NOT READY → Delegate another `/stark:think`
-   - If READY → Continue
-4. **Delegate** `/stark:run <id> "<task>"` - Execute the task
-5. **Delegate** `/stark:verify <id> "<task>"` - Verify completion
-   - If FAIL → Back to step 1 (max 3 attempts)
-   - If PASS → Next task
+| State | Next Action |
+|-------|-------------|
+| No solution.md | Delegate `/stark:new` |
+| Status: "New" | Delegate `/stark:plan` |
+| Status: "Planning Complete" | Delegate `/stark:task` for first task |
+| Task folder without VERIFICATION.md | Continue task loop |
+| EXECUTION.md exists | Delegate `/stark:verify` |
+| VERIFICATION.md shows PASS | Next task or cleanup if all done |
+| All tasks verified | Delegate `/stark:cleanup` |
+| Cleanup SATISFACTORY | Delegate `/stark:complete` |
+| Cleanup NEEDS WORK/UNSATISFACTORY | Fix issues, re-run cleanup |
+| Status: "Complete" + `[x] Execution complete` | **RESOLVE** |
+| 3 failures on same task OR 3 cleanup failures | **ABORT** |
 
 ---
 
-## Cleanup Loop (after all tasks verified)
+## Task Loop
 
-Once ALL tasks are verified, run the cleanup quality gate:
+For each task: task → think → ready (loop if not ready) → run → verify (retry if fail, max 3x) → next task
 
-1. **Delegate** `/stark:cleanup` - Multi-agent analysis of all changes
-2. **Check verdict**:
-   - If SATISFACTORY → Proceed to `/stark:complete`
-   - If NEEDS WORK or UNSATISFACTORY → Address critical issues
-3. **If not satisfactory**:
-   - Fix critical issues identified by cleanup
-   - Re-delegate `/stark:cleanup` to re-analyze
-   - Max 3 cleanup iterations before proceeding anyway
-4. **After cleanup passes** → Delegate `/stark:complete`
+---
 
-The cleanup phase ensures:
-- Code quality across all changes
-- Configuration validity
-- Documentation accuracy
-- Cross-file consistency
+## Cleanup Loop
+
+After all tasks verified:
+1. Delegate `/stark:cleanup` (multi-agent quality analysis)
+2. If SATISFACTORY → delegate `/stark:complete`
+3. If NEEDS WORK/UNSATISFACTORY → fix issues, re-run cleanup (max 3x)
+4. After 3 attempts or SATISFACTORY → delegate `/stark:complete`
 
 ---
 
 ## Progress Reporting
 
-After each delegation, report:
-```
-[Heartbeat #N]
-  State: <current state>
-  Action: Delegated /stark:<command> to subagent
-  Result: <subagent outcome>
-```
+After each delegation: `[Heartbeat #N] State: <state> | Action: <command> | Result: <outcome>`
 
 ---
 
