@@ -103,6 +103,11 @@ Get started with STARK in under 5 minutes.
 ### Prerequisites
 
 - Claude Code installed (any version)
+- STARK plugin installed:
+  ```
+  /plugin marketplace add carlelieser/stark
+  /plugin install stark@carlelieser
+  ```
 - No prior STARK knowledge required
 
 ### Your First STARK Solution

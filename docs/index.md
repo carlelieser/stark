@@ -36,7 +36,14 @@ features:
 
 ## Quick Start
 
-Install STARK from the Claude Code plugin marketplace, then get started immediately:
+Install STARK in Claude Code:
+
+```
+/plugin marketplace add carlelieser/stark
+/plugin install stark@carlelieser
+```
+
+Then get started immediately:
 
 **Your First STARK Solution:**
 
