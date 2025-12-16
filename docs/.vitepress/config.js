@@ -1,9 +1,38 @@
 export default {
-  title: 'STARK',
-  description: 'Structured Problem-Solving Framework for Claude Code',
+  lang: 'en-US',
+  title: 'STARK - Structured Problem-Solving Framework',
+  description: 'Systematic problem-solving framework for Claude Code. Break down complex challenges using the STARK methodology: Situation, Target, Approach, Resources, Knowledge.',
   base: '/stark/',
 
+  head: [
+    // Favicon
+    ['link', { rel: 'icon', href: '/stark/favicon.svg', type: 'image/svg+xml' }],
+
+    // Theme color for mobile browsers
+    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+
+    // Open Graph tags for social sharing (Facebook, LinkedIn)
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'STARK - Structured Problem-Solving Framework' }],
+    ['meta', { property: 'og:description', content: 'Systematic problem-solving framework for Claude Code. Break down complex challenges using STARK methodology.' }],
+    ['meta', { property: 'og:url', content: 'https://carlelieser.github.io/stark/' }],
+    ['meta', { property: 'og:site_name', content: 'STARK Framework' }],
+
+    // Twitter Card tags
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:title', content: 'STARK - Structured Problem-Solving Framework' }],
+    ['meta', { name: 'twitter:description', content: 'Systematic problem-solving framework for Claude Code. Break down complex challenges with structured methodology.' }],
+
+    // Additional SEO
+    ['meta', { name: 'keywords', content: 'problem-solving, framework, Claude Code, systematic thinking, STARK, methodology, structured approach' }],
+    ['meta', { name: 'author', content: 'Carlos Elieser' }]
+  ],
+
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },
