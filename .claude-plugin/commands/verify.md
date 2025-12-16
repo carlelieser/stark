@@ -11,85 +11,36 @@ Review task materials in .stark/$1/tasks/
 
 ## Task
 
-Verify the task execution meets all acceptance criteria.
+Verify task execution meets all acceptance criteria.
 
-1. Find the task folder matching "$2"
-2. Review:
-   - REPORT.md for acceptance criteria
-   - EXECUTION.md for what was done
-   - Actual outputs/changes made
+1. Load task materials (.stark/$1/tasks/ matching "$2"):
+   - REPORT.md (acceptance criteria)
+   - EXECUTION.md (work completed)
+   - Actual outputs/changes
 
-3. Check each acceptance criterion:
-   - Verify with evidence (file exists, test passes, etc.)
-   - Document verification method
+2. Check each criterion with evidence (files, tests, etc.)
 
-4. Create or update `.stark/$1/tasks/<task-id>/VERIFICATION.md`:
-
-```markdown
-# Verification Report
-
-**Task:** [Task Name]
-**Verified:** [timestamp]
-
----
-
-## Acceptance Criteria Check
-
-### Criterion 1: [Description]
-- **Status:** PASS / FAIL
-- **Evidence:** [How verified]
-- **Notes:** [Details]
-
-### Criterion 2: [Description]
-- **Status:** PASS / FAIL
-- **Evidence:** [How verified]
-- **Notes:** [Details]
-
----
-
-## Summary
-
-| Criterion | Status |
-|-----------|--------|
-| 1. [Name] | PASS/FAIL |
-| 2. [Name] | PASS/FAIL |
-
-**Overall:** X/Y criteria passed
-
----
-
-## Result
-
-**PASS** / **FAIL**
-```
+3. Create VERIFICATION.md with:
+   - Header: Task name, timestamp
+   - Acceptance Criteria Check: Each criterion with status (PASS/FAIL), evidence, notes
+   - Summary: Table of all criteria with statuses, overall count
+   - Result: PASS or FAIL
 
 ## Response
 
-Based on verification, respond with ONE of:
-
-### PASS
-
+### If PASS:
 ```
 ## Verification: PASS
-
-All acceptance criteria met.
-Task complete.
-
+All criteria met. Task complete.
 Update solution.md to mark task as done.
 ```
 
-### FAIL
-
+### If FAIL:
 ```
 ## Verification: FAIL
-
-**Failed Criteria:**
-1. [Criterion]: [Why it failed]
-
-**Required Actions:**
-- [What needs to be fixed]
-
-Return to: /stark:task $1 $2 (to revise approach)
+**Failed:** [Criterion and reason]
+**Actions:** [What to fix]
+Return to: /stark:task $1 $2
 ```
 
 ## Success Criteria
