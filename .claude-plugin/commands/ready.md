@@ -13,11 +13,11 @@ Review task materials in .stark/$1/tasks/
 
 Evaluate readiness for execution.
 
-1. Find the task folder matching "$2"
-2. Review:
+1. Load task materials (.stark/$1/tasks/ matching "$2"):
    - REPORT.md (execution plan)
-   - All DELIBERATION-*.md files
-3. Evaluate against readiness criteria:
+   - All DELIBERATION files
+
+2. Evaluate against readiness criteria:
 
 ### Readiness Checklist
 
@@ -30,36 +30,19 @@ Evaluate readiness for execution.
 
 ## Response
 
-Based on evaluation, respond with ONE of:
-
-### READY
-
+### If READY:
 ```
 ## Status: READY
-
-All criteria met. Task is ready for execution.
-
-**Summary:**
-- [Key points from deliberation]
-- [Approach to be taken]
-
+All criteria met.
+**Summary:** [Key points and approach]
 Proceed with: /stark:run $1 $2
 ```
 
-### NOT READY
-
+### If NOT READY:
 ```
 ## Status: NOT READY
-
-[Explain what's missing or uncertain]
-
-**Blocking Issues:**
-1. [Issue]
-2. [Issue]
-
-**Recommendation:**
-Run /stark:think $1 $2 to address:
-- [Specific area needing more thought]
+**Blocking:** [What's missing]
+**Recommendation:** /stark:think $1 $2 to address [specific areas]
 ```
 
 ## Success Criteria
