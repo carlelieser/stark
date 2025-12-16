@@ -1,4 +1,5 @@
 ---
+model: claude-opus-4-5-20251101
 description: Generate improvement proposals from collected feedback for a STARK command
 ---
 

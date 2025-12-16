@@ -1,4 +1,5 @@
 ---
+model: claude-haiku-4-20250514
 description: Show detailed status of a STARK solution
 ---
 

@@ -1,4 +1,5 @@
 ---
+model: claude-sonnet-4-5-20250929
 allowed-tools: Bash, Task, Read, Write, Glob, Edit, Grep
 description: Execute a STARK task
 ---

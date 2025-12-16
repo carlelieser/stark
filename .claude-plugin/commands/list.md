@@ -1,4 +1,5 @@
 ---
+model: claude-haiku-4-20250514
 description: List all STARK solutions with their status
 ---
 

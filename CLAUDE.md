@@ -26,3 +26,7 @@
 | `/stark:learn-history` | View learning history |
 | `/stark:learn-propose` | Generate improvements |
 | `/stark:learn-apply` | Apply improvements |
+
+## Documentation
+
+- **[Command Model Reference](.stark/solutions/model-assignment-3k9/MODEL_REFERENCE.md)** - Quick reference showing which Claude model each command uses and why

@@ -1,4 +1,5 @@
 ---
+model: claude-opus-4-5-20251101
 description: Capture learnings from STARK command executions to improve prompts
 ---
 

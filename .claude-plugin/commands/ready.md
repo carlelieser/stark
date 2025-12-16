@@ -1,4 +1,5 @@
 ---
+model: claude-sonnet-4-5-20250929
 description: Check if a task is ready for execution
 ---
 

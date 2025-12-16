@@ -1,4 +1,5 @@
 ---
+model: claude-sonnet-4-5-20250929
 allowed-tools: Read, Write, Edit, Glob, Bash
 description: Apply approved prompt improvement proposals to STARK commands
 ---
