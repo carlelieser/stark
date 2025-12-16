@@ -112,24 +112,11 @@ After each delegation: `[Heartbeat #N] State: <state> | Action: <command> | Resu
 
 ---
 
-## Your Task Now
+## Execute Now
 
-Execute the heartbeat loop:
+1. Delegate `/stark:new "$ARGUMENTS"` via Task tool, get solution ID
+2. Heartbeat loop: Read solution.md → determine state → delegate command → sleep 2s → repeat
+3. After all tasks verified: run cleanup loop
+4. When complete: report final summary
 
-1. **Initialize**: Use Task tool to delegate `/stark:new "$ARGUMENTS"`. Get the solution ID from the subagent's response.
-
-2. **Heartbeat Loop**:
-   - Read solution.md to check state
-   - Determine next action from state table
-   - Use Task tool to delegate the appropriate STARK command
-   - Sleep 2 seconds (`sleep 2` via Bash)
-   - Repeat
-
-3. **Cleanup Gate**: After all tasks are verified:
-   - Delegate `/stark:cleanup` to analyze all changes
-   - If not satisfactory, fix critical issues and re-run
-   - Once satisfactory (or after 3 attempts), proceed to complete
-
-4. **Resolve**: When state is Complete, report final summary.
-
-**START NOW**: Delegate `/stark:new` to a subagent for the problem: "$ARGUMENTS"
+**START**: Delegate `/stark:new` for problem: "$ARGUMENTS"
