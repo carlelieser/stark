@@ -17,28 +17,9 @@ Multi-agent cleanup analysis. You are the **orchestrator** - coordinate multiple
 
 ## Phase 1: Change Detection
 
-First, detect all changes in the repository:
+Run: `git diff --cached --name-status` (staged), `git diff --name-status` (unstaged), `git ls-files --others --exclude-standard` (untracked), `git diff HEAD --stat` (summary).
 
-```bash
-# Get comprehensive change summary
-echo "=== STAGED CHANGES ==="
-git diff --cached --name-status
-
-echo "=== UNSTAGED CHANGES ==="
-git diff --name-status
-
-echo "=== UNTRACKED FILES ==="
-git ls-files --others --exclude-standard
-
-echo "=== FULL DIFF SUMMARY ==="
-git diff HEAD --stat
-```
-
-Categorize changes by type:
-- **Code**: `.py`, `.js`, `.ts`, `.dart`, etc.
-- **Config**: `.yaml`, `.yml`, `.json`, `.toml`, etc.
-- **Docs**: `.md`, `.rst`, `.txt`, etc.
-- **Other**: Everything else
+Categorize: Code (.py, .js, .ts, etc.), Config (.yaml, .json, etc.), Docs (.md, .rst, etc.), Other.
 
 ---
 
@@ -78,37 +59,9 @@ Create report: Header (timestamp, scope) → Summary table (agent, critical/mode
 
 ## Phase 4: Deliberation Loop
 
-If verdict is not SATISFACTORY:
+If not SATISFACTORY: Present findings → Identify priorities → Propose fixes → Execute (with approval) → Re-analyze → Repeat (max 5 rounds).
 
-### Round N Deliberation
-
-1. **Present** aggregated findings to user
-2. **Identify** highest-priority issues to address
-3. **Propose** specific fixes for critical issues
-4. **Execute** fixes (with user approval)
-5. **Re-analyze** changed files
-6. **Repeat** until SATISFACTORY or user accepts current state
-
-```
-Deliberation Template:
-
-## Deliberation Round [N]
-
-**Previous Verdict:** [rating]
-**Issues Addressed:** [count]
-**Remaining Critical:** [count]
-
-### Actions Taken
-1. [What was fixed]
-2. [What was fixed]
-
-### Re-Analysis Results
-[Updated findings after fixes]
-
-### New Verdict
-**Overall Quality:** [rating]
-**Recommendation:** [Continue fixing / Accept current state / Request user input]
-```
+Each round documents: Previous verdict, issues addressed, remaining critical, actions taken, re-analysis results, new verdict/recommendation.
 
 ---
 
@@ -132,10 +85,6 @@ DETECT changes → SPAWN subagents (parallel) → AGGREGATE findings → JUDGE q
 
 ## Your Task Now
 
-1. **Execute Phase 1**: Detect all changes using git commands
-2. **Execute Phase 2**: Spawn analysis subagents in parallel (use multiple Task tool calls in one message)
-3. **Execute Phase 3**: Aggregate findings into report
-4. **Execute Phase 4**: If not satisfactory, enter deliberation loop
-5. **Exit**: Report final verdict
+Execute: Phase 1 (detect changes) → Phase 2 (spawn subagents in parallel) → Phase 3 (aggregate report) → Phase 4 (deliberate if needed) → Exit (final verdict).
 
-**START NOW**: Run the git commands to detect changes, then spawn the appropriate subagents based on what file types changed.
+Start by running git commands, then spawn appropriate subagents based on file types.
