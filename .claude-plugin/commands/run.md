@@ -18,58 +18,20 @@ Ensure `/stark:ready $1 $2` returned READY before executing.
 
 Execute the task according to the plan.
 
-1. Find the task folder matching "$2"
-2. Review:
-   - REPORT.md for execution plan
-   - Latest deliberation for any refinements
-3. Execute each step in the plan
-4. Document execution in `.stark/$1/tasks/<task-id>/EXECUTION.md`:
+1. Load task materials (.stark/$1/tasks/ matching "$2"):
+   - REPORT.md (execution plan)
+   - Latest DELIBERATION
 
-```markdown
-# Execution Log
+2. Execute each step in the plan
 
-**Task:** [Task Name]
-**Started:** [timestamp]
-**Status:** In Progress
+3. Create EXECUTION.md with:
+   - Header: Task name, timestamp, status
+   - Steps Executed: Each step with status and output
+   - Changes Made: Table of file changes (path, action, description)
+   - Issues Encountered: Problems and resolutions
+   - Completion: Timestamp, final status, summary notes
 
----
-
-## Steps Executed
-
-### Step 1: [Action]
-**Status:** Complete/Failed
-**Output:**
-[Results or errors]
-
-### Step 2: [Action]
-**Status:** Complete/Failed
-**Output:**
-[Results or errors]
-
----
-
-## Changes Made
-
-| File | Action | Description |
-|------|--------|-------------|
-| path/to/file | Created/Modified/Deleted | What changed |
-
----
-
-## Issues Encountered
-
-[Any problems and how they were resolved]
-
----
-
-## Completion
-
-**Finished:** [timestamp]
-**Status:** Complete / Partial / Failed
-**Notes:** [Summary]
-```
-
-5. Update REPORT.md status to reflect execution
+4. Update REPORT.md status to reflect execution
 
 ## Success Criteria
 
