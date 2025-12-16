@@ -1010,6 +1010,8 @@ SOFTWARE.
 
 **Created by:** [Carlos](https://github.com/carlelieser)
 
+**Support the Project:** [Patreon](https://patreon.com/carlelieserdev)
+
 **Acknowledgments:**
 
 - **Anthropic** - For building Claude Code and creating the plugin ecosystem that makes STARK possible
