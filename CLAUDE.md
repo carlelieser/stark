@@ -19,7 +19,7 @@
 | `/stark:complete` | Finalize solution |
 | `/stark:status` | Show solution status |
 | `/stark:list` | List all solutions |
-| `/stark:auto` | Autonomous end-to-end |
+| `/stark:auto` | Autonomous end-to-end (includes approval prompts at 3 decision points) |
 | `/stark:setup` | Initial setup |
 | `/stark:cleanup` | Multi-agent cleanup analysis |
 | `/stark:learn` | Capture feedback |

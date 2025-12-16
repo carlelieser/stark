@@ -69,15 +69,16 @@ Read `.stark/<id>/solution.md` to determine next action:
 |-------|-------------|
 | No solution.md | Delegate `/stark:new` |
 | Status: "New" | Delegate `/stark:plan` |
-| Status: "Planning Complete" | Delegate `/stark:task` for first task |
+| Status: "Planning Complete" | **APPROVAL 1** - Ask user before first task |
 | Task folder without VERIFICATION.md | Continue task loop |
 | EXECUTION.md exists | Delegate `/stark:verify` |
 | VERIFICATION.md shows PASS | Next task or cleanup if all done |
-| All tasks verified | Delegate `/stark:cleanup` |
+| All tasks verified | **APPROVAL 2** - Ask user before cleanup |
 | Cleanup SATISFACTORY | Delegate `/stark:complete` |
-| Cleanup NEEDS WORK/UNSATISFACTORY | Fix issues, re-run cleanup |
+| Cleanup NEEDS WORK/UNSATISFACTORY | **APPROVAL 3** - Ask user before auto-fix |
 | Status: "Complete" + `[x] Execution complete` | **RESOLVE** |
 | 3 failures on same task OR 3 cleanup failures | **ABORT** |
+| User declined approval | **EXIT** - Report state and stop |
 
 ---
 
@@ -87,12 +88,63 @@ For each task: task → think → ready (loop if not ready) → run → verify (
 
 ---
 
+## Approval Prompts
+
+At critical decision points, prompt user for approval before proceeding.
+
+### APPROVAL 1: After Planning Complete
+
+When status is "Planning Complete", ask before first task:
+
+```
+Planning complete for solution <id>.
+
+Review the plan at: .stark/<id>/PLAN.md
+
+Proceed with task execution? (yes/no)
+```
+
+- **yes**: Delegate `/stark:task` for first task
+- **no**: Report "Workflow paused. Review plan and run /stark:auto <id> to resume." and **EXIT**
+
+### APPROVAL 2: Before Cleanup
+
+When all tasks are verified, ask before cleanup:
+
+```
+All tasks verified for solution <id>.
+
+Review implementation at: .stark/<id>/tasks/
+
+Run cleanup analysis? (yes/no)
+```
+
+- **yes**: Delegate `/stark:cleanup`
+- **no**: Report "Workflow paused. Review tasks and run /stark:auto <id> to resume." and **EXIT**
+
+### APPROVAL 3: Before Auto-Fix
+
+When cleanup returns NEEDS WORK or UNSATISFACTORY, ask before fixing:
+
+```
+Cleanup found issues for solution <id>.
+
+Review report at: .stark/<id>/CLEANUP.md
+
+Attempt auto-fix? (yes/no)
+```
+
+- **yes**: Fix issues, re-run cleanup (max 3x)
+- **no**: Report "Workflow paused. Fix issues manually and run /stark:auto <id> to resume." and **EXIT**
+
+---
+
 ## Cleanup Loop
 
-After all tasks verified:
+After all tasks verified (and APPROVAL 2 granted):
 1. Delegate `/stark:cleanup` (multi-agent quality analysis)
 2. If SATISFACTORY → delegate `/stark:complete`
-3. If NEEDS WORK/UNSATISFACTORY → fix issues, re-run cleanup (max 3x)
+3. If NEEDS WORK/UNSATISFACTORY → **APPROVAL 3** → fix issues, re-run cleanup (max 3x)
 4. After 3 attempts or SATISFACTORY → delegate `/stark:complete`
 
 ---
@@ -112,6 +164,7 @@ After each delegation: `[Heartbeat #N] State: <state> | Action: <command> | Resu
 | Cleanup failed 3 times | Proceed with warning, delegate `/stark:complete` |
 | Max 100 heartbeats reached | **ABORT** - Report timeout |
 | Unrecoverable error from subagent | **ABORT** - Report error |
+| User declined approval prompt | **EXIT** - Report state and pause for manual review |
 
 ---
 
