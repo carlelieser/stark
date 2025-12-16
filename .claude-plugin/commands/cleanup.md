@@ -1,5 +1,5 @@
 ---
-model: claude-haiku-4-20250514
+model: claude-haiku-4-5-20251001
 allowed-tools: Bash, Task, Read, Glob, Edit, Grep
 description: Analyze all changes systematically with multiple subagents, deliberate, and iterate until satisfactory
 ---

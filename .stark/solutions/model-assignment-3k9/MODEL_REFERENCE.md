@@ -13,7 +13,7 @@ This document provides a comprehensive reference for the Claude model assignment
 **Three-Tier System:**
 - **Tier 3 (Complex Analysis):** Claude Opus 4.5 - Deep reasoning, creative problem-solving, quality-critical work
 - **Tier 2 (Moderate Execution):** Claude Sonnet 4.5 - Structured execution, balanced reasoning, operational tasks
-- **Tier 1 (Simple Display):** Claude Haiku 4 - Data retrieval, display, lightweight coordination
+- **Tier 1 (Simple Display):** Claude Haiku 4.5 - Data retrieval, display, lightweight coordination
 
 ---
 
@@ -21,11 +21,11 @@ This document provides a comprehensive reference for the Claude model assignment
 
 | Command | Model | Tier | Primary Purpose |
 |---------|-------|------|-----------------|
-| auto | Haiku 4 | 1 | Autonomous orchestrator (state machine coordination) |
-| cleanup | Haiku 4 | 1 | Multi-agent orchestrator (aggregates subagent analysis) |
-| learn-history | Haiku 4 | 1 | Display learning data with basic pattern analysis |
-| list | Haiku 4 | 1 | List all solutions with metadata display |
-| status | Haiku 4 | 1 | Display solution status report |
+| auto | Haiku 4.5 | 1 | Autonomous orchestrator (state machine coordination) |
+| cleanup | Haiku 4.5 | 1 | Multi-agent orchestrator (aggregates subagent analysis) |
+| learn-history | Haiku 4.5 | 1 | Display learning data with basic pattern analysis |
+| list | Haiku 4.5 | 1 | List all solutions with metadata display |
+| status | Haiku 4.5 | 1 | Display solution status report |
 | complete | Sonnet 4.5 | 2 | Finalize solution with lessons learned |
 | learn-apply | Sonnet 4.5 | 2 | Apply approved proposals with validation |
 | ready | Sonnet 4.5 | 2 | Evaluate task readiness against checklist |
@@ -95,9 +95,9 @@ Sonnet 4.5 provides the optimal balance of quality, capability, and cost for the
 
 ---
 
-### Tier 1: Simple Display (Claude Haiku 4)
+### Tier 1: Simple Display (Claude Haiku 4.5)
 
-**Model Identifier:** `claude-haiku-4-20250514`
+**Model Identifier:** `claude-haiku-4-5-20251001`
 
 **Commands (5):**
 - `/stark:status` - Display solution status report
@@ -135,11 +135,11 @@ These commands prioritize speed and efficiency for operations that require minim
 - **Trade-offs:** Balanced performance and cost
 - **Commands Using:** 6/17 (35%)
 
-### Claude Haiku 4
-- **Identifier:** `claude-haiku-4-20250514`
-- **Strengths:** Fast response time, efficient for simple tasks, cost-effective
+### Claude Haiku 4.5
+- **Identifier:** `claude-haiku-4-5-20251001`
+- **Strengths:** Fast response time, near-frontier intelligence, cost-effective
 - **Use Case:** Display operations, coordination overhead, data retrieval
-- **Trade-offs:** Lower reasoning capability, best for straightforward tasks
+- **Trade-offs:** Lower reasoning than Opus/Sonnet, best for straightforward tasks
 - **Commands Using:** 5/17 (30%)
 
 ---
@@ -230,7 +230,7 @@ This guide is currently stored in the solution directory. For permanent document
 
 **Need structured execution?** → Use Sonnet 4.5 commands (setup, ready, run, verify, complete, learn-apply)
 
-**Need fast display or coordination?** → Use Haiku 4 commands (status, list, auto, cleanup, learn-history)
+**Need fast display or coordination?** → Use Haiku 4.5 commands (status, list, auto, cleanup, learn-history)
 
 **Starting a new solution?** → new (Opus) → plan (Opus) → setup (Sonnet)
 

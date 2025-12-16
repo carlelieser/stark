@@ -1,5 +1,5 @@
 ---
-model: claude-haiku-4-20250514
+model: claude-haiku-4-5-20251001
 allowed-tools: Bash, Task, Read, Glob, Edit
 description: Autonomous STARK workflow - solve a problem end-to-end
 ---
