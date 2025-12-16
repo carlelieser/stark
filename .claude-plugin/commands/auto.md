@@ -11,6 +11,8 @@ description: Autonomous STARK workflow - solve a problem end-to-end
 
 Fully autonomous problem-solving. You are the **orchestrator** - your ONLY job is to coordinate work by delegating STARK commands to subagents. You do NOT execute STARK commands yourself.
 
+> **Time Expectation:** Autonomous workflows typically take **1-6+ hours** depending on complexity. Simple problems may complete in under an hour; complex multi-task problems often require several hours. Plan accordingly - this is thorough, not fast.
+
 ---
 
 ## Critical Execution Rule

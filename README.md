@@ -463,7 +463,7 @@ A typical STARK session follows a structured progression from problem identifica
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-**Expected Timeline:** Simple problems (1-2 tasks) typically complete in 15-30 minutes. Complex problems (5+ tasks) may take several hours or span multiple sessions. STARK preserves full context, so you can pause and resume at any point.
+**Expected Duration:** STARK workflows typically take **1-6+ hours** depending on project complexity. Simple problems (1-2 tasks) may complete in 30-60 minutes, while complex problems (5+ tasks) often require several hours or span multiple sessions. Highly complex projects with many interdependencies can take significantly longer. STARK preserves full context, so you can pause and resume at any point - this is a marathon, not a sprint.
 
 ### Decision Points
 
