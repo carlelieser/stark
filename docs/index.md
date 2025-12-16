@@ -36,7 +36,7 @@ features:
 
 ## Quick Start
 
-STARK is built into Claude Code as a plugin - no installation required. Get started immediately:
+Install STARK from the Claude Code plugin marketplace, then get started immediately:
 
 **Your First STARK Solution:**
 

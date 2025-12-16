@@ -9,7 +9,8 @@ Ready to experience structured problem-solving? This guide will have you running
 
 ## Prerequisites
 
-- **Claude Code installed** - STARK is built-in, no additional setup needed
+- **Claude Code installed** - [Get Claude Code](https://claude.ai/code) if you haven't already
+- **STARK plugin installed** - Add the plugin marketplace to Claude Code, then install STARK from the marketplace
 - **No prior STARK knowledge required** - this guide assumes you're brand new to structured problem-solving frameworks
 
 Let's get started with the simplest possible approach.
