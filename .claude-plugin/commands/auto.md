@@ -44,61 +44,17 @@ Continuous cycle: Check status → Decide → Delegate via Task tool → Sleep 2
 
 ## How to Delegate STARK Commands
 
-For EACH STARK command, use the Task tool like this:
+Use Task tool (subagent_type: "general-purpose") for each command:
 
-### /stark:new
-```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    Execute the /stark:new command for this problem:
-    "$ARGUMENTS"
-
-    After completion, report back the solution ID that was created.
-```
-
-### /stark:plan
-```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    Execute /stark:plan for solution ID: <id>
-
-    Complete the planning phase and report when done.
-```
-
-### /stark:task, /stark:think, /stark:ready, /stark:run, /stark:verify
-```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    Execute /stark:<command> <id> "<task name>"
-
-    Report the outcome.
-```
-
-### /stark:complete
-```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    Execute /stark:complete <id>
-
-    Finalize the solution and report the summary.
-```
-
-### /stark:cleanup (Quality Gate)
-```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    Execute /stark:cleanup
-
-    Run multi-agent cleanup analysis on all uncommitted changes.
-    This analyzes code quality, config validity, documentation, and consistency.
-
-    Report the verdict (SATISFACTORY / NEEDS WORK / UNSATISFACTORY) and any critical issues found.
-```
+- `/stark:new` - "Execute /stark:new for: $ARGUMENTS. Return solution ID."
+- `/stark:plan <id>` - "Execute /stark:plan <id>. Report when done."
+- `/stark:task <id> "<task>"` - "Execute /stark:task <id> '<task>'. Report outcome."
+- `/stark:think <id> "<task>"` - "Execute /stark:think <id> '<task>'. Report outcome."
+- `/stark:ready <id> "<task>"` - "Execute /stark:ready <id> '<task>'. Report verdict."
+- `/stark:run <id> "<task>"` - "Execute /stark:run <id> '<task>'. Report outcome."
+- `/stark:verify <id> "<task>"` - "Execute /stark:verify <id> '<task>'. Report result."
+- `/stark:complete <id>` - "Execute /stark:complete <id>. Report summary."
+- `/stark:cleanup` - "Execute /stark:cleanup. Report verdict and critical issues."
 
 ---
 
