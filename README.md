@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://carlelieser.github.io/stark/favicon.svg" alt="STARK" width="80" height="80">
+  <img src="https://carlelieser.github.io/stark/favicon.svg?v=2" alt="STARK" width="80" height="80">
 </p>
 
 <h1 align="center">STARK</h1>
