@@ -19,7 +19,7 @@ export default {
   // Site Title
   // Appears in browser tabs, search results, and social sharing cards.
   // Format: "Page Title | Site Title" on content pages.
-  title: 'STARK - Structured Problem-Solving Framework',
+  title: 'STARK',
 
   // Site Description
   // Used by search engines and social sharing. Keep under 160 characters for best SEO.
@@ -47,7 +47,7 @@ export default {
     // Open Graph tags - controls how links appear on Facebook, LinkedIn, Slack, etc.
     // Test with: https://www.opengraph.xyz/
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'STARK - Structured Problem-Solving Framework' }],
+    ['meta', { property: 'og:title', content: 'STARK' }],
     ['meta', { property: 'og:description', content: 'Systematic problem-solving framework for Claude Code. Break down complex challenges using STARK methodology.' }],
     ['meta', { property: 'og:url', content: 'https://carlelieser.github.io/stark/' }],
     ['meta', { property: 'og:site_name', content: 'STARK Framework' }],
@@ -57,7 +57,7 @@ export default {
     // 'summary' = small card, 'summary_large_image' = large card with image
     // Test with: https://cards-dev.twitter.com/validator
     ['meta', { name: 'twitter:card', content: 'summary' }],
-    ['meta', { name: 'twitter:title', content: 'STARK - Structured Problem-Solving Framework' }],
+    ['meta', { name: 'twitter:title', content: 'STARK' }],
     ['meta', { name: 'twitter:description', content: 'Systematic problem-solving framework for Claude Code. Break down complex challenges with structured methodology.' }],
     // To add image: ['meta', { name: 'twitter:image', content: 'https://carlelieser.github.io/stark/twitter-card.png' }],
 
