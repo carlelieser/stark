@@ -333,44 +333,7 @@ Deliberation Template:
 
 ## Execution Flow
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    CLEANUP WORKFLOW                              │
-│                                                                  │
-│   ┌──────────┐                                                   │
-│   │  START   │                                                   │
-│   └────┬─────┘                                                   │
-│        ▼                                                         │
-│   ┌──────────────┐         ┌────────────────┐                    │
-│   │   DETECT     │────────►│  No changes?   │──YES──► EXIT       │
-│   │   CHANGES    │         └────────────────┘                    │
-│   └──────────────┘                │ NO                           │
-│                                   ▼                              │
-│   ┌──────────────────────────────────────────┐                   │
-│   │         SPAWN ANALYSIS SUBAGENTS         │                   │
-│   │  (Code, Config, Docs, Consistency)       │                   │
-│   │           [IN PARALLEL]                  │                   │
-│   └────────────────────┬─────────────────────┘                   │
-│                        ▼                                         │
-│   ┌──────────────┐                                               │
-│   │  AGGREGATE   │                                               │
-│   │  FINDINGS    │                                               │
-│   └──────┬───────┘                                               │
-│          ▼                                                       │
-│   ┌──────────────┐         ┌────────────────┐                    │
-│   │   JUDGE      │────────►│ SATISFACTORY?  │──YES──► EXIT       │
-│   │   QUALITY    │         └────────────────┘                    │
-│   └──────────────┘                │ NO                           │
-│                                   ▼                              │
-│   ┌──────────────┐         ┌────────────────┐                    │
-│   │  DELIBERATE  │◄────────│  Max rounds?   │──YES──► EXIT       │
-│   │  & FIX       │         └────────────────┘                    │
-│   └──────┬───────┘                ▲ NO                           │
-│          │                        │                              │
-│          └────────────────────────┘                              │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
-```
+DETECT changes → SPAWN subagents (parallel) → AGGREGATE findings → JUDGE quality → If unsatisfactory: DELIBERATE & FIX (max 5 rounds) → EXIT
 
 ---
 
