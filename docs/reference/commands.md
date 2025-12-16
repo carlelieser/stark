@@ -15,8 +15,6 @@ New to STARK? Start with the [Getting Started guide](/guide/getting-started) for
 > - **Manual workflow:** `/stark:setup` (first time) → `/stark:new` → `/stark:plan` → `/stark:task` → `/stark:run` → `/stark:verify` → `/stark:complete`
 > - **Autonomous workflow:** `/stark:setup` (first time) → `/stark:auto` "problem description" (handles all steps automatically)
 
----
-
 ## Getting Started
 
 One-time initialization that creates the `.stark/` directory structure and methodology documentation. Run this once when you first use STARK.
@@ -24,8 +22,6 @@ One-time initialization that creates the `.stark/` directory structure and metho
 | Command | Description |
 |---------|-------------|
 | `/stark:setup` | Initialize the STARK framework by creating `.stark/` directory and methodology documentation (one-time setup) |
-
----
 
 ## Core Workflow
 
@@ -44,8 +40,6 @@ The standard STARK workflow progresses linearly through these commands, though y
 
 See the [basic workflow example](/guide/examples#example-1-basic-manual-workflow) to understand how these commands work together in practice.
 
----
-
 ## Advanced Workflows
 
 > **Note:** These are special orchestration commands that coordinate multiple STARK operations autonomously. Use when you want hands-off execution with built-in quality gates.
@@ -57,8 +51,6 @@ See the [basic workflow example](/guide/examples#example-1-basic-manual-workflow
 
 For guidance on choosing between manual and autonomous workflows, see [When to Use Manual vs Autonomous Mode](/guide/workflow#when-to-use-manual-vs-autonomous-mode).
 
----
-
 ## Management
 
 Utility commands for monitoring solutions and understanding current state. Use anytime during a solution to check progress, or after completion to review past solutions.
@@ -67,8 +59,6 @@ Utility commands for monitoring solutions and understanding current state. Use a
 |---------|-------------|
 | `/stark:status` | Show detailed status of a specific solution including progress, completed tasks, and current phase (use anytime during solution to check where you are) |
 | `/stark:list` | List all STARK solutions with their status, creation date, and problem summary (useful for resuming previous work or reviewing past solutions) |
-
----
 
 ## Learning System
 
@@ -82,7 +72,5 @@ STARK's self-healing commands that capture feedback and improve command prompts 
 | `/stark:learn-apply` | Apply approved improvement proposals to command prompts while preserving structure |
 
 For the theoretical foundation of STARK's continuous improvement approach, see the [Methodology Reference](/reference/methodology).
-
----
 
 For practical examples of these commands in action, see [Usage Examples](/guide/examples).

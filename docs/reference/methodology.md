@@ -10,7 +10,6 @@ description: Complete STARK problem-solving methodology - framework, phases, pri
 
 This comprehensive reference documents the complete STARK methodology for structured problem-solving. It provides deep theoretical foundations, detailed frameworks, and practical tools for each phase of the STARK process. For a high-level overview, see the [Framework Overview](../guide/framework.md); for practical application patterns, see the [Workflow Guide](../guide/workflow.md).
 
----
 
 ## Table of Contents
 
@@ -27,7 +26,6 @@ This comprehensive reference documents the complete STARK methodology for struct
 11. [Failure Mode Analysis](#failure-mode-analysis)
 12. [Templates and Checklists](#templates-and-checklists)
 
----
 
 ## Core Philosophy
 
@@ -79,7 +77,6 @@ Every action has consequences, and those consequences have consequences.
 - Consider 2nd and 3rd order impacts
 - Watch for unintended consequences
 
----
 
 ## The STARK Framework
 
@@ -120,7 +117,6 @@ STARK is a five-phase problem-solving methodology:
 
 Each phase builds on the previous, but iteration between phases is expected and encouraged.
 
----
 
 ## Phase 1: Situation Analysis
 
@@ -224,7 +220,6 @@ Categorize constraints into three types:
 
 **Action:** Challenge every assumed constraint. Negotiate soft constraints. Work within hard constraints.
 
----
 
 ## Phase 2: Target Definition
 
@@ -281,7 +276,6 @@ What is the smallest version of success that still delivers value?
 
 This creates a clear line between success and failure while allowing for degrees of success.
 
----
 
 ## Phase 3: Approach Design
 
@@ -356,7 +350,6 @@ SUBTASKS (steps within tasks)
 - **Risks:** What could go wrong
 - **Estimate:** Time/effort required
 
----
 
 ## Phase 4: Resource Mobilization
 
@@ -440,7 +433,6 @@ Allocate resources to de-risk critical paths:
 - Standard approach
 - Minimal oversight
 
----
 
 ## Phase 5: Knowledge Integration
 
@@ -519,7 +511,6 @@ ACTION ITEMS:
 - How will we track this
 ```
 
----
 
 ## Cross-Cutting Principles
 
@@ -582,7 +573,6 @@ These principles apply across all phases. For practical application patterns, se
 - Can we solve this with less code/process?
 - Can we solve this with fewer people?
 
----
 
 ## Problem Classification
 
@@ -668,7 +658,6 @@ Different problem types require different approaches. See [Usage Examples](../gu
 - Rushing solution on complicated problem
 - Applying best practices to complex problem
 
----
 
 ## Decision Frameworks
 
@@ -728,7 +717,6 @@ Expected Value = (Probability of Success × Value if Success)
 
 **Use for:** Major life/career decisions, values-based choices.
 
----
 
 ## Failure Mode Analysis
 
@@ -775,7 +763,6 @@ Expected Value = (Probability of Success × Value if Success)
 
 **Default recovery action:** Return to Situation Analysis. Most failures stem from misunderstood problems.
 
----
 
 ## Templates and Checklists
 
@@ -919,7 +906,6 @@ For complete template documentation, see the [Templates Reference](./templates.m
 [To be filled when done: what worked, what didn't, learnings]
 ```
 
----
 
 ## Conclusion
 

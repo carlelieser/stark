@@ -168,8 +168,6 @@ Use this template for detailed task planning when working outside the STARK comm
 
 These templates are starting points, not rigid requirements. Copy them, customize them, and adapt them to fit your specific needs and problem context. Start with the Quick Start Checklist for most problems, then move to the Comprehensive Checklist when you need deeper analysis. The templates work well alongside STARK commands but can also be used independently for any structured problem-solving work.
 
----
-
 ## Related Resources
 
 - [Complete Methodology](/reference/methodology) - Understanding STARK's five phases

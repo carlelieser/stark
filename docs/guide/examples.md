@@ -56,8 +56,6 @@ You implement authentication with confidence that you've considered security imp
 
 Ready to try the basic workflow yourself? See [Getting Started](/guide/getting-started) for your first STARK solution.
 
----
-
 ## Example 2: Autonomous Mode - Real-Time Notifications
 
 **Scenario:** You need to implement a complete real-time notification system with WebSockets, including connection management, message routing, and fallback for offline clients. The solution involves multiple coordinated tasks, and you want STARK to orchestrate the entire workflow automatically.
@@ -84,8 +82,6 @@ Use `/stark:auto` when you want hands-off execution with built-in quality assura
 The notification system is implemented end-to-end with quality gates enforced automatically. You receive a complete solution with all tasks verified and a cleanup analysis confirming code quality standards. The work is fully documented with deliberations, execution logs, and verification reports for every task, providing transparency into what was built and why.
 
 For more details on autonomous mode commands and options, see the [Command Reference](/reference/commands).
-
----
 
 ## Example 3: Learning System - Improving STARK Commands
 
@@ -133,7 +129,5 @@ This creates a flywheel effect: better commands lead to better solutions, which 
 **Outcome:**
 
 STARK becomes more effective with every use. Commands evolve based on real execution feedback rather than theoretical assumptions. The learning system creates a continuous improvement loop: use commands → capture feedback → analyze patterns → propose improvements → apply changes → better commands. This self-healing capability means STARK adapts to your specific needs and becomes more valuable over time, with all prompt evolution tracked and reversible.
-
----
 
 For more workflow patterns and guidance, see the [Workflow Guide](/guide/workflow).

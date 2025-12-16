@@ -56,8 +56,6 @@ STARK excels at complex, multi-step problems where the solution path isn't immed
 
 For simple, well-defined tasks with straightforward solutions, STARK's systematic approach may add unnecessary overhead.
 
----
-
 ## Why STARK?
 
 Complex problems rarely fail from lack of effort—they fail from lack of structure. Traditional development problem-solving is often ad-hoc: mental models scattered across comments, incomplete plans in tickets, context lost between sessions, no systematic verification.
@@ -70,8 +68,6 @@ STARK makes structure the default:
 - **Captures learning** to improve future problem-solving
 
 **Result:** Faster progress on complex challenges with fewer false starts and compounding knowledge gains.
-
----
 
 ## Ready to Begin?
 
