@@ -12,56 +12,18 @@ Verify `.stark/SYSTEM.md` exists. If not, instruct user to run `/stark:setup` fi
 
 ## Task
 
-1. Generate a unique solution ID (kebab-case, e.g., `azure-falcon-7k`)
-2. Create solution folder: `.stark/<id>/`
-3. Analyze the problem using STARK Phase 1 (Situation Analysis):
-   - Construct problem statement (Current State → Desired State → Gap → Impact)
-   - Identify root causes (5 Whys)
-   - Map constraints (hard, soft, assumed)
-4. Create initial `.stark/<id>/solution.md` with:
-
-```markdown
-# STARK Solution: [Brief Title]
-
-**ID:** <id>
-**Created:** [date]
-**Status:** New
-
----
-
-## Situation
-
-[Problem analysis from step 3]
-
----
-
-## Target
-
-[To be defined in /stark:plan]
-
----
-
-## Approach
-
-[To be defined in /stark:plan]
-
----
-
-## Resources
-
-[To be defined in /stark:plan]
-
----
-
-## Status
-
-- [ ] Problem analyzed
-- [ ] Solution planned
-- [ ] Tasks defined
-- [ ] Execution complete
-```
-
-5. Report the solution ID for subsequent commands
+1. Generate unique solution ID (kebab-case, e.g., `azure-falcon-7k`)
+2. Create `.stark/<id>/` folder
+3. Analyze problem using STARK Phase 1 (Situation):
+   - Problem statement: Current State → Desired State → Gap → Impact
+   - Root causes (5 Whys)
+   - Constraints (hard, soft, assumed)
+4. Create `.stark/<id>/solution.md`:
+   - Header: Title, ID, Created date, Status: New
+   - Situation: Analysis from step 3
+   - Target/Approach/Resources: Placeholders (define in /stark:plan)
+   - Status checklist: Problem analyzed, Solution planned, Tasks defined, Execution complete
+5. Report solution ID
 
 ## Success Criteria
 
