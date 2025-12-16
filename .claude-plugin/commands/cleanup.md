@@ -48,88 +48,12 @@ For each category with changes, spawn a specialized analysis subagent **in paral
 
 ### Code Quality Analyst
 ```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    You are a Code Quality Analyst. Review these code changes for:
-
-    **Files to analyze:**
-    [List code files from Phase 1]
-
-    **Analysis Criteria:**
-    1. Code correctness - Logic errors, bugs, edge cases
-    2. Code style - Consistency, naming, formatting
-    3. Security - Vulnerabilities, injection risks, secrets exposure
-    4. Performance - Inefficiencies, N+1 queries, memory leaks
-    5. Maintainability - Complexity, duplication, tight coupling
-
-    **Output Format (JSON):**
-    ```json
-    {
-      "agent": "code-quality",
-      "findings": [
-        {
-          "file": "path/to/file.py",
-          "line": 42,
-          "severity": "critical|moderate|minor",
-          "category": "correctness|style|security|performance|maintainability",
-          "issue": "Description of the issue",
-          "recommendation": "How to fix it"
-        }
-      ],
-      "summary": {
-        "critical": 0,
-        "moderate": 0,
-        "minor": 0,
-        "overall_quality": "good|acceptable|needs-work|poor"
-      }
-    }
-    ```
-
-    Read the files and provide your analysis.
+Task: Analyze [list code files]. Review for: 1) Correctness (logic, bugs, edge cases) 2) Style (consistency, naming) 3) Security (vulnerabilities, secrets) 4) Performance (inefficiencies, leaks) 5) Maintainability (complexity, duplication). Output JSON: {"agent": "code-quality", "findings": [{file, line, severity, category, issue, recommendation}], "summary": {critical, moderate, minor, overall_quality}}
 ```
 
 ### Configuration Validator
 ```
-Task tool:
-  subagent_type: "general-purpose"
-  prompt: |
-    You are a Configuration Validator. Review these config changes for:
-
-    **Files to analyze:**
-    [List config files from Phase 1]
-
-    **Analysis Criteria:**
-    1. Syntax validity - Valid YAML/JSON/TOML structure
-    2. Schema compliance - Required fields present, correct types
-    3. Security - No secrets, proper permissions, safe defaults
-    4. Consistency - Naming conventions, formatting standards
-    5. Completeness - No missing required config, no orphaned references
-
-    **Output Format (JSON):**
-    ```json
-    {
-      "agent": "config-validator",
-      "findings": [
-        {
-          "file": "path/to/config.yaml",
-          "line": 15,
-          "severity": "critical|moderate|minor",
-          "category": "syntax|schema|security|consistency|completeness",
-          "issue": "Description of the issue",
-          "recommendation": "How to fix it"
-        }
-      ],
-      "summary": {
-        "critical": 0,
-        "moderate": 0,
-        "minor": 0,
-        "overall_quality": "good|acceptable|needs-work|poor"
-      }
-    }
-    ```
-
-    Read the files and provide your analysis.
+Task: Analyze [list config files]. Review for: 1) Syntax (valid YAML/JSON/TOML) 2) Schema (required fields, types) 3) Security (no secrets, safe defaults) 4) Consistency (naming, formatting) 5) Completeness (no missing/orphaned refs). Output JSON: {"agent": "config-validator", "findings": [{file, line, severity, category, issue, recommendation}], "summary": {critical, moderate, minor, overall_quality}}
 ```
 
 ### Documentation Reviewer
