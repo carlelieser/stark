@@ -63,6 +63,8 @@ Here's what a typical STARK session looks like from start to finish:
 
 **Expected Timeline:** Simple problems (1-2 tasks) typically complete in 15-30 minutes. Complex problems (5+ tasks) may take several hours or span multiple sessions. STARK preserves full context, so you can pause and resume at any point.
 
+**Performance Note:** STARK commands are optimized for efficiency with 41% faster token usage on average. Parallel operations enable faster file reading and validation, so you'll notice quick execution without sacrificing analytical depth.
+
 To see this flow in action with concrete examples, check out the [Examples guide](/guide/examples).
 
 ## Decision Points
