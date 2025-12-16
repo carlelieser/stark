@@ -7,22 +7,13 @@ description: Deliberate on a task through iterative analysis
 **Solution ID:** $1
 **Task:** $2
 
-Review existing materials:
-- Solution: @.stark/$1/solution.md
-- Task reports in: .stark/$1/tasks/
-
 ## Task
 
-Iterate on the task plan through deep deliberation.
+Deep iterative analysis on the task.
 
-1. Find the task folder matching "$2" in `.stark/$1/tasks/`
-2. Review:
-   - The task's REPORT.md
-   - All existing DELIBERATION-*.md files
-   - Related tasks' deliberations (for cross-task insights)
-
-3. Create new deliberation: `.stark/$1/tasks/<task-id>/DELIBERATION-<n>.md`
-   - Number sequentially: DELIBERATION-1.md, DELIBERATION-2.md, etc.
+1. Find task folder matching "$2" in `.stark/$1/tasks/`
+2. Read REPORT.md and all DELIBERATION-*.md files
+3. Create `.stark/$1/tasks/<task-id>/DELIBERATION-<n>.md` (sequential numbering)
 
 ```markdown
 # Deliberation [N]
@@ -33,31 +24,26 @@ Iterate on the task plan through deep deliberation.
 ---
 
 ## Review of Prior Thinking
-
-[Summary of previous deliberations if any]
+[Summary of previous deliberations]
 
 ---
 
 ## New Insights
-
-[What new angles or considerations emerged]
+[Key new angles or considerations]
 
 ---
 
 ## Questions Resolved
-
-- [Question]: [Answer/Resolution]
+- [Question]: [Resolution]
 
 ---
 
 ## Open Questions
-
 - [Remaining uncertainties]
 
 ---
 
 ## Confidence Assessment
-
 | Aspect | Confidence | Notes |
 |--------|------------|-------|
 | Understanding | High/Med/Low | |
@@ -67,17 +53,16 @@ Iterate on the task plan through deep deliberation.
 ---
 
 ## Recommendation
-
 **READY** / **NEEDS MORE THINKING**
 
 [Rationale]
 ```
 
-4. If insights require changes, update REPORT.md accordingly
+4. Update REPORT.md if insights require changes
 
 ## Success Criteria
 
-- [ ] New deliberation file created
-- [ ] Prior deliberations reviewed and referenced
-- [ ] Confidence assessment provided
+- [ ] New deliberation created
+- [ ] Prior deliberations reviewed
+- [ ] Confidence assessed
 - [ ] Clear recommendation given
