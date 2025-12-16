@@ -9,7 +9,6 @@
 <p align="center">
   <a href="https://github.com/carlelieser/stark"><img src="https://img.shields.io/badge/Claude%20Code-Plugin-blue.svg" alt="Claude Code Plugin"></a>
   <a href="#license"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <a href="https://github.com/carlelieser/stark/releases"><img src="https://img.shields.io/github/v/release/carlelieser/stark" alt="Release"></a>
 </p>
 
 <p align="center">
