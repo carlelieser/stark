@@ -1,13 +1,21 @@
-# STARK - Structured Thinking And Reasoning Kit
+<p align="center">
+  <img src="https://carlelieser.github.io/stark/favicon.svg" alt="STARK" width="80" height="80">
+</p>
 
-> A systematic problem-solving framework for Claude Code that transforms complex challenges into structured, trackable solutions.
+<h1 align="center">STARK</h1>
+<p align="center"><strong>Structured Thinking And Reasoning Kit</strong></p>
+<p align="center">A systematic problem-solving framework for Claude Code that transforms complex challenges into structured, trackable solutions.</p>
 
-[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue.svg)](https://github.com/carlelieser/stark)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
-[![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://github.com/carlelieser/stark/releases)
-[![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)](https://github.com/carlelieser/stark)
+<p align="center">
+  <a href="https://github.com/carlelieser/stark"><img src="https://img.shields.io/badge/Claude%20Code-Plugin-blue.svg" alt="Claude Code Plugin"></a>
+  <a href="#license"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="https://github.com/carlelieser/stark/releases"><img src="https://img.shields.io/badge/Version-1.0.0-green.svg" alt="Version: 1.0.0"></a>
+  <a href="https://github.com/carlelieser/stark"><img src="https://img.shields.io/badge/Status-Active-success.svg" alt="Status: Active"></a>
+</p>
 
-> **[View Full Documentation](https://carlelieser.github.io/stark/)** - Complete guides, examples, and reference materials
+<p align="center">
+  <a href="https://carlelieser.github.io/stark/"><strong>View Full Documentation →</strong></a>
+</p>
 
 ---
 
