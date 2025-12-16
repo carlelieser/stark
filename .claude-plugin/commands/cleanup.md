@@ -70,65 +70,9 @@ Task: Analyze [list all files]. Review for: 1) Cross-file consistency 2) API con
 
 ## Phase 3: Aggregate Findings
 
-After all subagents complete, aggregate their findings:
+Collect JSON from subagents, merge (remove duplicates), sort by severity, group by file.
 
-1. **Collect** all JSON outputs from subagents
-2. **Merge** findings, removing duplicates
-3. **Sort** by severity (critical > moderate > minor)
-4. **Group** by file for actionability
-
-Create aggregated report:
-
-```markdown
-# Cleanup Analysis Report
-
-**Generated:** [timestamp]
-**Scope:** [what was analyzed]
-
----
-
-## Summary
-
-| Agent | Critical | Moderate | Minor | Quality |
-|-------|----------|----------|-------|---------|
-| Code Quality | X | X | X | [rating] |
-| Config Validator | X | X | X | [rating] |
-| Documentation | X | X | X | [rating] |
-| Consistency | X | X | X | [rating] |
-| **TOTAL** | X | X | X | [overall] |
-
----
-
-## Critical Issues (Must Fix)
-
-### [File Path]
-- **[Category]**: [Issue description]
-  - Recommendation: [How to fix]
-
----
-
-## Moderate Issues (Should Fix)
-
-### [File Path]
-- **[Category]**: [Issue description]
-  - Recommendation: [How to fix]
-
----
-
-## Minor Issues (Nice to Fix)
-
-### [File Path]
-- **[Category]**: [Issue description]
-  - Recommendation: [How to fix]
-
----
-
-## Verdict
-
-**Overall Quality:** [SATISFACTORY / NEEDS WORK / UNSATISFACTORY]
-
-[Explanation of verdict]
-```
+Create report: Header (timestamp, scope) → Summary table (agent, critical/moderate/minor counts, quality ratings) → Issues by severity (Critical/Moderate/Minor, grouped by file with category, description, recommendation) → Verdict (SATISFACTORY/NEEDS WORK/UNSATISFACTORY with explanation)
 
 ---
 
