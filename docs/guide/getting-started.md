@@ -5,12 +5,14 @@ description: Get started with STARK in under 5 minutes - your first structured p
 
 # Getting Started
 
-Get started with STARK in under 5 minutes.
+Ready to experience structured problem-solving? This guide will have you running your first STARK solution in under 5 minutes. No methodology knowledge required - just describe your problem and let STARK guide you through a systematic solution.
 
 ## Prerequisites
 
-- Claude Code installed (any version)
-- No prior STARK knowledge required
+- **Claude Code installed** - STARK is built-in, no additional setup needed
+- **No prior STARK knowledge required** - this guide assumes you're brand new to structured problem-solving frameworks
+
+Let's get started with the simplest possible approach.
 
 ## Your First STARK Solution
 
@@ -20,27 +22,46 @@ One command. That's all you need.
 /stark:auto "Create a data validation utility function with error handling"
 ```
 
-STARK handles everything: analyzes your problem, plans the approach, executes tasks, verifies completion, and captures learnings. You watch while it works.
+STARK handles everything: analyzes your problem, plans the approach, executes tasks, verifies completion, and captures learnings. Watch as it works through each phase automatically, building a complete solution with full documentation of every decision made.
 
 ## Want More Control?
 
-Use the manual workflow for step-by-step guidance:
+STARK handled everything automatically above. Here's what happened internally - and how you can control each step when you need to:
 
 ```bash
-/stark:setup                              # First time only
-/stark:new "Your problem description"     # Creates solution (note the ID)
-/stark:plan <solution-id>                 # Plan your approach
-/stark:run <solution-id> "Task name"      # Execute tasks
-/stark:complete <solution-id>             # Finalize and capture learnings
+/stark:setup                              # First time only - initializes STARK system
+/stark:new "Your problem description"     # Creates solution analysis (note the ID)
+/stark:plan <solution-id>                 # Develop detailed execution plan
+/stark:run <solution-id> "Task name"      # Execute specific tasks one at a time
+/stark:complete <solution-id>             # Finalize solution and capture learnings
 ```
+
+This manual approach gives you control over timing, lets you review plans before execution, and allows you to tackle complex problems that benefit from deliberate phase-by-phase work.
 
 ## What Happens Behind the Scenes
 
-Both approaches follow STARK's core workflow: **analyze → plan → execute → verify → complete**. All decisions, plans, and outcomes are preserved in `.stark/solutions/<solution-id>/`, making your work fully resumable with a complete audit trail.
+Whether you use autonomous or manual mode, STARK follows the same systematic approach: **analyze → plan → execute → verify → complete**.
+
+Every solution creates a complete record in `.stark/solutions/<solution-id>/`:
+- Your problem analysis and solution plan
+- Task execution reports with detailed steps
+- Deliberation notes capturing key decisions
+- Verification results confirming completion
+
+This makes your work fully resumable and creates a learning artifact you can review and improve upon. Need to pause? Come back anytime - STARK knows exactly where you left off.
 
 ## Next Steps
 
-- **Try it yourself:** Run the commands above with your own problem
-- **Explore examples:** See [Usage Examples](/guide/examples) for real-world scenarios including autonomous mode
-- **Learn the commands:** Check [Command Reference](/reference/commands) for complete documentation
-- **Understand the methodology:** Read the [Complete Methodology](/reference/methodology) for the complete STARK framework
+You now know how to run STARK. Here's how to go deeper:
+
+**Ready to solve your own problems?**
+Run `/stark:auto` with any development challenge you're facing - from architecting APIs to refactoring legacy code.
+
+**Want to see more examples first?**
+Check out [Usage Examples](/guide/examples) for real-world scenarios showing both autonomous and manual workflows.
+
+**Curious how STARK's methodology works?**
+Read the [Framework Overview](/guide/framework) to understand the five-phase approach and when to use each command.
+
+**Need the complete command reference?**
+Browse [Command Reference](/reference/commands) for all commands, parameters, and advanced usage patterns.

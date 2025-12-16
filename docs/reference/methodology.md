@@ -8,6 +8,8 @@ description: Complete STARK problem-solving methodology - framework, phases, pri
 **Version:** 1.0
 **Last Updated:** 2025-12-15
 
+This comprehensive reference documents the complete STARK methodology for structured problem-solving. It provides deep theoretical foundations, detailed frameworks, and practical tools for each phase of the STARK process. For a high-level overview, see the [Framework Overview](../guide/framework.md); for practical application patterns, see the [Workflow Guide](../guide/workflow.md).
+
 ---
 
 ## Table of Contents
@@ -124,6 +126,8 @@ Each phase builds on the previous, but iteration between phases is expected and 
 
 **Goal:** Develop a comprehensive understanding of the problem and its context.
 
+**Implemented by:** The [`/stark:new`](./commands.md#starknew) command guides you through situation analysis when creating a new solution.
+
 ### 1.1 Problem Statement
 
 Use the **Current → Desired → Gap → Impact** framework:
@@ -182,6 +186,8 @@ Why? [Root cause emerging]
 Why? [Fundamental root cause]
 ```
 
+**Example:** "Tests are failing" → Why? "Dependencies changed" → Why? "No version pinning" → Why? "Rush to ship" → Why? "No release process" → Why? "Process undervalued" → **Root cause: organizational prioritization issue.**
+
 **Warning:** Stop when you reach causes outside your control or influence.
 
 #### Fishbone Diagram Categories
@@ -223,6 +229,8 @@ Categorize constraints into three types:
 ## Phase 2: Target Definition
 
 **Goal:** Define what success looks like with precision and clarity.
+
+**Implemented by:** The [`/stark:plan`](./commands.md#starkplan) command structures target definition in the solution plan's target section.
 
 ### 2.1 SMART-ER Criteria
 
@@ -279,6 +287,8 @@ This creates a clear line between success and failure while allowing for degrees
 
 **Goal:** Generate and evaluate solution approaches, then select the best path forward.
 
+**Implemented by:** The [`/stark:plan`](./commands.md#starkplan) command includes approach design and task breakdown in the solution plan.
+
 ### 3.1 Solution Generation
 
 **Generate at least 7 approaches** before evaluating any. This forces creative thinking beyond obvious solutions.
@@ -322,6 +332,8 @@ Score each approach across key dimensions:
 
 List all the reasons, then design mitigations for the most likely failures.
 
+**Example:** Pre-mortem for microservices migration might reveal: "Failed because we underestimated data consistency complexity, teams lacked distributed systems expertise, and we had no rollback plan." This insight leads to prototyping the hardest data scenarios first, investing in training, and designing the migration to be incrementally reversible.
+
 ### 3.4 Work Breakdown
 
 Break the chosen approach into tasks:
@@ -349,6 +361,8 @@ SUBTASKS (steps within tasks)
 ## Phase 4: Resource Mobilization
 
 **Goal:** Identify, acquire, and allocate resources needed for execution.
+
+**Implemented by:** The [`/stark:plan`](./commands.md#starkplan) command includes a resources section for documenting required and available resources.
 
 ### 4.1 Resource Inventory
 
@@ -432,6 +446,8 @@ Allocate resources to de-risk critical paths:
 
 **Goal:** Capture learning and integrate it into organizational knowledge.
 
+**Implemented by:** The [`/stark:complete`](./commands.md#starkcomplete) command guides solution finalization and learning capture, while [`/stark:learn`](./commands.md#starklearn) commands support continuous learning integration.
+
 ### 5.1 Learning Loops
 
 **Real-time Learning (During Execution):**
@@ -507,7 +523,7 @@ ACTION ITEMS:
 
 ## Cross-Cutting Principles
 
-These principles apply across all phases:
+These principles apply across all phases. For practical application patterns, see the [Workflow Guide](../guide/workflow.md).
 
 ### 8.1 Iteration Over Perfection
 
@@ -570,7 +586,7 @@ These principles apply across all phases:
 
 ## Problem Classification
 
-Different problem types require different approaches:
+Different problem types require different approaches. See [Usage Examples](../guide/examples.md) for demonstrations of STARK applied to different problem types.
 
 ### 9.1 Clear Problems
 
@@ -585,7 +601,7 @@ Different problem types require different approaches:
 - Follow established procedures
 - Optimize for efficiency
 
-**Examples:** Bug fixes, known configurations, standard deployments
+**Examples:** Fixing a known bug with documented solution, deploying with established runbooks, configuring standard tools.
 
 ### 9.2 Complicated Problems
 
@@ -601,7 +617,7 @@ Different problem types require different approaches:
 - Analyze thoroughly before acting
 - Use STARK methodology fully
 
-**Examples:** System architecture, optimization, complex integrations
+**Examples:** Designing a system architecture with performance requirements, optimizing database queries, integrating complex third-party systems.
 
 ### 9.3 Complex Problems
 
@@ -617,7 +633,7 @@ Different problem types require different approaches:
 - Amplify what works, dampen what doesn't
 - Embrace emergence
 
-**Examples:** Organizational change, product-market fit, culture building
+**Examples:** Implementing organizational change, finding product-market fit, improving team culture, adopting new development practices.
 
 ### 9.4 Chaotic Problems
 
@@ -633,7 +649,7 @@ Different problem types require different approaches:
 - Move to Complex or Complicated once stable
 - Prevent, don't optimize
 
-**Examples:** Production outages, crisis response, emergencies
+**Examples:** Production outages requiring immediate mitigation, security incidents, system failures affecting customers.
 
 ### 9.5 Confused Problems
 
@@ -762,6 +778,8 @@ Expected Value = (Probability of Success × Value if Success)
 ---
 
 ## Templates and Checklists
+
+For complete template documentation, see the [Templates Reference](./templates.md).
 
 ### 12.1 Quick Start Checklist
 

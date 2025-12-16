@@ -5,7 +5,18 @@ description: STARK templates and checklists - quick start, comprehensive checkli
 
 # Templates and Checklists
 
+STARK templates provide structured frameworks for applying the methodology to real problems. These templates are designed to be copied, customized, and adapted to your specific needs. Use them to structure your thinking, ensure thoroughness, and create reviewable documentation throughout your problem-solving process.
+
+## Template Overview
+
+- **Quick Start Checklist**: For straightforward problems you can solve in 10-15 minutes
+- **Comprehensive Checklist**: For complex or high-stakes problems requiring thorough analysis
+- **Decision Template**: For documenting important decisions, especially irreversible ones
+- **Task Template**: For detailed task planning (similar to `/stark:task` command output)
+
 ## Quick Start Checklist
+
+Use this checklist when you have a straightforward problem with clear scope, are working under time constraints, or are familiar with this type of problem. This streamlined approach can typically be completed in 10-15 minutes.
 
 **For straightforward problems:**
 
@@ -20,6 +31,8 @@ description: STARK templates and checklists - quick start, comprehensive checkli
 - [ ] Capture learning
 
 ## Comprehensive Checklist
+
+Use this checklist for complex problems, high-stakes situations, unfamiliar domains, or when you want to ensure nothing critical is missed. This maps to STARK's five phases and can be used with commands like `/stark:new`, `/stark:plan`, and `/stark:run`.
 
 **For complex or high-stakes problems:**
 
@@ -64,6 +77,12 @@ description: STARK templates and checklists - quick start, comprehensive checkli
 
 ## Decision Template
 
+Use this template to document important project decisions, especially irreversible ones (Type II decisions). Creating a written record improves decision quality and provides valuable context for future reviews.
+
+::: tip
+Irreversible decisions deserve more analysis than reversible ones. If you can easily change your mind later, use a lighter decision-making process.
+:::
+
 ```markdown
 ## Decision: [Title]
 
@@ -105,6 +124,8 @@ description: STARK templates and checklists - quick start, comprehensive checkli
 
 ## Task Template
 
+Use this template for detailed task planning when working outside the STARK command workflow. Note that the `/stark:task` command generates a similar structure automatically, so this template is most useful for manual planning or non-STARK task management.
+
 ```markdown
 ## Task: [Title]
 
@@ -143,6 +164,15 @@ description: STARK templates and checklists - quick start, comprehensive checkli
 [To be filled when done: what worked, what didn't, learnings]
 ```
 
+## Using These Templates
+
+These templates are starting points, not rigid requirements. Copy them, customize them, and adapt them to fit your specific needs and problem context. Start with the Quick Start Checklist for most problems, then move to the Comprehensive Checklist when you need deeper analysis. The templates work well alongside STARK commands but can also be used independently for any structured problem-solving work.
+
 ---
 
-For the complete methodology and context on how these templates fit into the STARK framework, see the [Complete Methodology](/reference/methodology).
+## Related Resources
+
+- [Complete Methodology](/reference/methodology) - Understanding STARK's five phases
+- [Command Reference](/reference/commands) - Commands that implement these workflows
+- [Workflow Guide](/guide/workflow) - How to use templates with commands
+- [Usage Examples](/guide/examples) - See templates applied to real problems

@@ -4,7 +4,7 @@ layout: home
 hero:
   name: STARK
   text: Structured Thinking And Reasoning Kit
-  tagline: A systematic problem-solving framework for Claude Code that transforms complex challenges into structured, trackable solutions.
+  tagline: Transform complex development challenges into structured, trackable solutions with systematic problem-solving for Claude Code.
   actions:
     - theme: brand
       text: Get Started
@@ -19,11 +19,11 @@ hero:
 features:
   - icon: 🎯
     title: Structured Five-Phase Methodology
-    details: Transform complex problems into manageable phases with STARK's systematic approach - Situation analysis, Target definition, Approach design, Resource mobilization, and Knowledge integration guide you from understanding to execution.
+    details: Transform complex problems into manageable phases with STARK's systematic approach. Situation analysis, Target definition, Approach design, Resource mobilization, and Knowledge integration guide you from problem understanding to verified execution.
 
   - icon: ⚡
     title: Autonomous Execution
-    details: Run /stark:auto to handle the entire workflow end-to-end. STARK actively executes your plans, manages tasks, and drives solutions to completion while you focus on high-level decisions.
+    details: Run /stark:auto to handle the entire workflow end-to-end. STARK actively executes plans, manages tasks, and drives solutions to completion, saving hours of manual task coordination while you focus on strategic decisions.
 
   - icon: ✅
     title: Built-in Verification
@@ -31,17 +31,12 @@ features:
 
   - icon: 🧠
     title: Self-Healing Learning System
-    details: STARK gets smarter with every use. Capture feedback from executions, generate improvement proposals, and apply them to refine command prompts - creating a framework that continuously improves itself.
+    details: STARK gets smarter with every use. Capture feedback from executions, generate improvement proposals, and apply refinements to command prompts. The framework continuously improves itself, making your future problem-solving faster and more effective.
 ---
 
 ## Quick Start
 
-Get up and running with STARK in minutes:
-
-```bash
-# STARK is a Claude Code plugin - no installation required
-# Just start using commands in your Claude Code session
-```
+STARK is built into Claude Code as a plugin - no installation required. Get started immediately:
 
 **Your First STARK Solution:**
 
@@ -49,27 +44,32 @@ Get up and running with STARK in minutes:
 /stark:auto
 ```
 
-Type `/stark:auto` and describe your problem. STARK will analyze the situation, plan the approach, execute tasks, and verify completion autonomously.
+Type `/stark:auto` and describe your problem. STARK will analyze the situation, plan the solution, execute tasks, and verify completion autonomously.
 
 **When to Use STARK:**
 
-STARK is designed for complex, multi-step problems where the solution path isn't immediately obvious. It adds valuable structure for:
+STARK excels at complex, multi-step problems where the solution path isn't immediately clear. It provides valuable structure for:
 
-- Complex challenges with unclear or evolving requirements
-- Cross-cutting changes requiring careful planning
-- Learning-intensive work where capturing insights improves future efficiency
+- Challenges with unclear or evolving requirements
+- Cross-cutting changes requiring careful coordination
+- Work where capturing insights improves future efficiency
 
-For simple, well-defined tasks where the solution is straightforward, STARK's systematic approach may be overhead.
+For simple, well-defined tasks with straightforward solutions, STARK's systematic approach may add unnecessary overhead.
 
 ---
 
 ## Why STARK?
 
-Complex problems rarely fail from lack of effort—they fail from lack of structure. Traditional problem-solving in development is often ad-hoc: mental models scattered across comments, incomplete plans in tickets, context lost between sessions, and no systematic verification.
+Complex problems rarely fail from lack of effort—they fail from lack of structure. Traditional development problem-solving is often ad-hoc: mental models scattered across comments, incomplete plans in tickets, context lost between sessions, no systematic verification.
 
-STARK makes structure the default, preventing wasted effort through upfront analysis, ensuring completion through explicit verification, preserving full context for resumability, and capturing learning to improve future problem-solving.
+STARK makes structure the default:
 
-**Result:** Faster progress on complex challenges with fewer false starts and better knowledge retention.
+- **Prevents wasted effort** through upfront analysis
+- **Ensures completion** with explicit verification
+- **Preserves full context** for seamless resumability
+- **Captures learning** to improve future problem-solving
+
+**Result:** Faster progress on complex challenges with fewer false starts and compounding knowledge gains.
 
 ---
 

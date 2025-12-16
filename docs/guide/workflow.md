@@ -5,11 +5,13 @@ description: How to use STARK effectively - session flows, decision points, best
 
 # Workflow Guide
 
-How to use STARK effectively.
+Understanding STARK's framework is one thing—applying it to your daily work is another. This guide shows you how to use STARK effectively through typical session flows, key decision points, proven best practices, and common patterns that emerge in real problem-solving.
+
+Whether you're running your first STARK solution or your fiftieth, these workflows will help you maximize value while avoiding common pitfalls. For conceptual background, see the [Framework Overview](/guide/framework). For concrete examples, check out the [Examples](/guide/examples).
 
 ## Typical STARK Session Flow
 
-A typical STARK session follows a structured progression from problem identification through verified completion. Understanding this flow helps you use STARK effectively and know what to expect at each stage.
+Here's what a typical STARK session looks like from start to finish:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -61,6 +63,8 @@ A typical STARK session follows a structured progression from problem identifica
 
 **Expected Timeline:** Simple problems (1-2 tasks) typically complete in 15-30 minutes. Complex problems (5+ tasks) may take several hours or span multiple sessions. STARK preserves full context, so you can pause and resume at any point.
 
+To see this flow in action with concrete examples, check out the [Examples guide](/guide/examples).
+
 ## Decision Points
 
 Knowing when to use specific commands or workflows maximizes STARK's value while minimizing overhead.
@@ -83,16 +87,18 @@ Knowing when to use specific commands or workflows maximizes STARK's value while
 
 **Trade-offs:** Autonomous mode is faster and ensures systematic completeness but offers less control. Manual mode gives you decision authority at every step but requires more time and engagement.
 
+**Rule of thumb:** If you value speed and trust STARK's systematic approach, choose autonomous mode. If you need to understand or influence each decision, choose manual mode.
+
 ### When to Run /stark:think
 
-**Always deliberate when:**
+**Deliberate when:**
 - The task approach isn't immediately obvious
 - Multiple viable approaches exist and you need to evaluate trade-offs
 - The task has significant risk or irreversible consequences
 - You're working in unfamiliar territory
 - Prior attempts at similar tasks failed
 
-**Skip deliberation when:**
+**Trust the plan when:**
 - The execution plan is clear and straightforward
 - The task is routine with established patterns
 - You're confident in the approach from prior experience
@@ -124,27 +130,45 @@ Knowing when to use specific commands or workflows maximizes STARK's value while
 - You've reviewed proposals and they align with STARK's philosophy
 - You want to test iterative command evolution
 
-**Best practice:** Capture feedback immediately after command execution while context is fresh. Review and apply improvements in batches rather than after every single feedback entry.
+**Rule of thumb:** Capture feedback liberally while it's fresh—you can always decide later what's worth acting on. Apply improvements conservatively when you see clear patterns across multiple executions.
+
+For detailed information on learning system commands, see the [Command Reference](/reference/commands).
 
 ## Best Practices
 
 Following these practices helps you get maximum value from STARK while avoiding common pitfalls.
 
-1. **Front-load the analysis** - Spend more time in situation analysis and target definition than you think you need. Time invested in understanding the problem deeply prevents wasted execution on wrong solutions. If you're tempted to skip planning and jump to coding, that's precisely when STARK adds most value.
+### 1. Front-load the Analysis
 
-2. **Write specific acceptance criteria** - Vague criteria like "works well" or "is fast enough" make verification meaningless. Define measurable outcomes: "API responds in <200ms for 95th percentile" or "handles 1000 concurrent connections without errors." Specific criteria make task completion unambiguous.
+Spend more time in situation analysis and target definition than you think you need. Time invested in understanding the problem deeply prevents wasted execution on wrong solutions. If you're tempted to skip planning and jump to coding, that's precisely when STARK adds most value.
 
-3. **Break tasks into testable units** - Each task should be independently verifiable against its own acceptance criteria. If you can't verify a task completed successfully without running other tasks, it's too coupled. Aim for tasks that take 30 minutes to 2 hours each - smaller than that creates overhead, larger risks incomplete execution.
+### 2. Write Specific Acceptance Criteria
 
-4. **Preserve full context** - STARK's power comes from resumability and audit trails. Don't delete solution directories or edit generated files manually. Let STARK maintain the complete history. If you need to correct something, use STARK commands rather than direct file edits.
+Vague criteria like "works well" or "is fast enough" make verification meaningless. Define measurable outcomes: "API responds in <200ms for 95th percentile" or "handles 1000 concurrent connections without errors." Specific criteria make task completion unambiguous.
 
-5. **Use deliberation strategically** - `/stark:think` is valuable for high-risk or ambiguous tasks, but not every task needs iterative deliberation. Over-deliberating on straightforward tasks wastes time. Under-deliberating on complex tasks causes execution failures. Match deliberation depth to task complexity and risk.
+### 3. Break Tasks into Testable Units
 
-6. **Verify before proceeding** - Never mark a task complete or move to the next task until `/stark:verify` passes. Failures compound - building on unverified work multiplies technical debt. If verification fails, fix the task before proceeding.
+Each task should be independently verifiable against its own acceptance criteria. If you can't verify a task completed successfully without running other tasks, it's too coupled. Aim for tasks that take 30 minutes to 2 hours each - smaller than that creates overhead, larger risks incomplete execution.
 
-7. **Capture learnings immediately** - Run `/stark:learn` while the command execution is fresh in your mind. Waiting even a few hours causes you to forget crucial context about what worked or didn't. Learning capture is most valuable when it's specific and contextual.
+### 4. Preserve Full Context
 
-8. **Review solutions periodically** - Revisit completed solutions in `.stark/solutions/` to reinforce patterns and identify improvements. Solutions become documentation of your decision-making process and can inform future similar problems.
+STARK's power comes from resumability and audit trails. Don't delete solution directories or edit generated files manually. Let STARK maintain the complete history. If you need to correct something, use STARK commands rather than direct file edits.
+
+### 5. Use Deliberation Strategically
+
+`/stark:think` is valuable for high-risk or ambiguous tasks, but not every task needs iterative deliberation. Over-deliberating on straightforward tasks wastes time. Under-deliberating on complex tasks causes execution failures. Match deliberation depth to task complexity and risk.
+
+### 6. Verify Before Proceeding
+
+Never mark a task complete or move to the next task until `/stark:verify` passes. Failures compound - building on unverified work multiplies technical debt. If verification fails, fix the task before proceeding.
+
+### 7. Capture Learnings Immediately
+
+Run `/stark:learn` while the command execution is fresh in your mind. Waiting even a few hours causes you to forget crucial context about what worked or didn't. Learning capture is most valuable when it's specific and contextual.
+
+### 8. Review Solutions Periodically
+
+Revisit completed solutions in `.stark/solutions/` to reinforce patterns and identify improvements. Solutions become documentation of your decision-making process and can inform future similar problems. For deeper insights into STARK's methodology, see the [Methodology guide](/reference/methodology).
 
 ## Common Patterns
 
@@ -152,9 +176,9 @@ Recognize these patterns to use STARK more effectively in common scenarios.
 
 ### Pattern 1: Iterative Refinement
 
-**Scenario:** Your initial approach isn't working and you need to pivot without starting over.
+**When to use this:** You're implementing a feature but realize the architecture needs adjustment, or your initial approach isn't working and you need to pivot without starting over.
 
-**Commands:**
+**The approach:**
 ```bash
 # Review current state
 /stark:status {solution-id}
@@ -172,13 +196,15 @@ Recognize these patterns to use STARK more effectively in common scenarios.
 /stark:verify {solution-id} "Task name"
 ```
 
-**Key insight:** STARK tracks deliberation iterations, so pivoting doesn't lose your thinking. Each `DELIBERATION-*.md` file preserves what you tried and why, building institutional knowledge even from failed approaches.
+**Why this works:** STARK tracks deliberation iterations, so pivoting doesn't lose your thinking. Each `DELIBERATION-*.md` file preserves what you tried and why, building institutional knowledge even from failed approaches. This prevents the common pitfall of abandoning valuable analysis when changing direction.
+
+**Expected outcome:** You preserve all prior thinking while pivoting to a better approach, with a complete audit trail of why you changed course.
 
 ### Pattern 2: Batch Processing
 
-**Scenario:** You have multiple similar tasks to execute (e.g., implementing several API endpoints, fixing multiple related bugs, or adding tests for multiple components).
+**When to use this:** You have multiple similar tasks to execute, such as implementing several API endpoints, fixing multiple related bugs, or adding tests for multiple components.
 
-**Commands:**
+**The approach:**
 ```bash
 # Create task reports for all tasks upfront
 /stark:task {solution-id} "Task 1"
@@ -198,15 +224,17 @@ Recognize these patterns to use STARK more effectively in common scenarios.
 /stark:complete {solution-id}
 ```
 
-**Alternative (autonomous):** Use `/stark:auto` to handle batch execution automatically. The autonomous mode will systematically work through all tasks with the same rigor but without manual intervention.
+**Alternative:** For hands-off batch execution, use [`/stark:auto`](/guide/examples#autonomous-mode-example) to systematically work through all tasks without manual intervention.
 
-**Key insight:** Creating all task reports upfront helps you see dependencies and sequencing issues before execution begins.
+**Why this works:** Creating all task reports upfront helps you see dependencies and sequencing issues before execution begins. This prevents the common pitfall of discovering blocking dependencies mid-execution.
+
+**Expected outcome:** All similar tasks completed systematically with consistent quality and a clear record of the complete batch workflow.
 
 ### Pattern 3: Exploration Mode
 
-**Scenario:** You don't fully understand the problem space and need to explore before committing to a solution approach.
+**When to use this:** You're facing an unfamiliar technology or problem domain where you need to investigate and understand before committing to a solution approach.
 
-**Commands:**
+**The approach:**
 ```bash
 # Create solution with initial understanding
 /stark:new "Exploratory problem description"
@@ -229,13 +257,15 @@ Recognize these patterns to use STARK more effectively in common scenarios.
 # ... rest of workflow
 ```
 
-**Key insight:** STARK supports learning-oriented tasks, not just implementation tasks. Use early tasks to reduce uncertainty before committing to a specific approach. Document findings in `EXECUTION.md` to inform subsequent planning.
+**Why this works:** STARK supports learning-oriented tasks, not just implementation tasks. Use early tasks to reduce uncertainty before committing to a specific approach. This prevents the common pitfall of making architectural decisions based on incomplete understanding.
+
+**Expected outcome:** Clear understanding of the problem space documented before committing to a solution, with findings preserved in `EXECUTION.md` to inform subsequent planning.
 
 ### Pattern 4: Quality Gate Enforcement
 
-**Scenario:** You want systematic quality checks before finalizing work, especially for production changes.
+**When to use this:** You want systematic quality checks before finalizing work, especially for production changes or when multiple tasks introduce complex cross-cutting changes.
 
-**Commands:**
+**The approach:**
 ```bash
 # Execute all tasks to completion
 # ... normal workflow ...
@@ -253,4 +283,6 @@ Recognize these patterns to use STARK more effectively in common scenarios.
 /stark:complete {solution-id}
 ```
 
-**Key insight:** `/stark:cleanup` runs multiple specialized subagents that analyze code quality, configuration validity, documentation accuracy, and cross-file consistency. This catches issues manual review often misses. Autonomous mode (`/stark:auto`) runs cleanup automatically before completion.
+**Why this works:** `/stark:cleanup` runs multiple specialized subagents that analyze code quality, configuration validity, documentation accuracy, and cross-file consistency. This catches issues manual review often misses and prevents the common pitfall of shipping code that passes tests but has subtle quality issues.
+
+**Expected outcome:** High confidence in production-readiness before finalization, with systematic verification across multiple quality dimensions. Note that [`/stark:auto`](/guide/examples#autonomous-mode-example) runs cleanup automatically before completion.
