@@ -1,7 +1,7 @@
 {
   "name": "stark",
-  "version": "1.0.0",
-  "description": "Structured Thinking And Reasoning Kit - A systematic problem-solving framework for Claude Code",
+  "version": "1.1.0",
+  "description": "A systematic problem-solving framework for Claude Code.",
   "type": "module",
   "private": true,
   "scripts": {
