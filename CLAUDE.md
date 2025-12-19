@@ -16,10 +16,11 @@
 | `/stark:ready` | Check task readiness |
 | `/stark:run` | Execute tasks |
 | `/stark:verify` | Verify completion |
+| `/stark:assess` | Fresh expert evaluation of current state vs original problem |
 | `/stark:complete` | Finalize solution |
 | `/stark:status` | Show solution status |
 | `/stark:list` | List all solutions |
-| `/stark:auto` | Autonomous end-to-end (includes approval prompts at 3 decision points) |
+| `/stark:auto` | Autonomous end-to-end (plan→act→assess→repeat loop) |
 | `/stark:setup` | Initial setup |
 | `/stark:cleanup` | Multi-agent cleanup analysis |
 | `/stark:learn` | Capture feedback |

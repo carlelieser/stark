@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document provides a comprehensive reference for the Claude model assignments across all 17 STARK commands. The STARK framework uses a three-tier model assignment strategy to optimize for both performance quality and operational cost.
+This document provides a comprehensive reference for the Claude model assignments across all 18 STARK commands. The STARK framework uses a three-tier model assignment strategy to optimize for both performance quality and operational cost.
 
 **Three-Tier System:**
 - **Tier 3 (Complex Analysis):** Claude Opus 4.5 - Deep reasoning, creative problem-solving, quality-critical work
@@ -21,7 +21,7 @@ This document provides a comprehensive reference for the Claude model assignment
 
 | Command | Model | Tier | Primary Purpose |
 |---------|-------|------|-----------------|
-| auto | Haiku 4.5 | 1 | Autonomous orchestrator (state machine coordination) |
+| auto | Haiku 4.5 | 1 | Autonomous orchestrator (plan→act→assess→repeat loop) |
 | cleanup | Haiku 4.5 | 1 | Multi-agent orchestrator (aggregates subagent analysis) |
 | learn-history | Haiku 4.5 | 1 | Display learning data with basic pattern analysis |
 | list | Haiku 4.5 | 1 | List all solutions with metadata display |
@@ -32,6 +32,7 @@ This document provides a comprehensive reference for the Claude model assignment
 | run | Sonnet 4.5 | 2 | Execute task steps according to plan |
 | setup | Sonnet 4.5 | 2 | Initialize STARK framework with template generation |
 | verify | Sonnet 4.5 | 2 | Verify acceptance criteria with evidence |
+| assess | Opus 4.5 | 3 | Fresh expert evaluation of current state vs original problem |
 | learn | Opus 4.5 | 3 | Capture feedback through 14 validation-heavy prompts |
 | learn-propose | Opus 4.5 | 3 | Pattern detection and improvement proposal generation |
 | new | Opus 4.5 | 3 | Phase 1 STARK: 5 Whys root cause analysis |
@@ -47,11 +48,12 @@ This document provides a comprehensive reference for the Claude model assignment
 
 **Model Identifier:** `claude-opus-4-5-20251101`
 
-**Commands (6):**
+**Commands (7):**
 - `/stark:new` - Phase 1 STARK problem analysis
 - `/stark:plan` - Phases 2-4 solution generation and planning
 - `/stark:task` - Deep task breakdown and risk assessment
 - `/stark:think` - Iterative deliberation and reasoning
+- `/stark:assess` - Fresh expert evaluation of current state vs original problem
 - `/stark:learn` - Capture feedback with extensive validation
 - `/stark:learn-propose` - Pattern detection and proposal generation
 
@@ -62,6 +64,7 @@ These commands require the highest level of reasoning capability and output qual
 - Creative solution generation and evaluation
 - Complex decision-making under uncertainty
 - Iterative reasoning with confidence assessment
+- Fresh expert assessment of current state vs original problem
 - Pattern recognition across multiple feedback instances
 - Quality-critical outputs that guide the entire solution process
 
@@ -126,21 +129,21 @@ These commands prioritize speed and efficiency for operations that require minim
 - **Strengths:** Deep reasoning, creative problem-solving, complex analysis, highest output quality
 - **Use Case:** Quality-critical analytical work, strategic decision-making, creative generation
 - **Trade-offs:** Higher cost, slower response time
-- **Commands Using:** 6/17 (35%)
+- **Commands Using:** 7/18 (39%)
 
 ### Claude Sonnet 4.5
 - **Identifier:** `claude-sonnet-4-5-20250929`
 - **Strengths:** Balanced reasoning, structured execution, tool use, good quality-to-cost ratio
 - **Use Case:** Operational tasks, structured evaluation, implementation work
 - **Trade-offs:** Balanced performance and cost
-- **Commands Using:** 6/17 (35%)
+- **Commands Using:** 6/18 (33%)
 
 ### Claude Haiku 4.5
 - **Identifier:** `claude-haiku-4-5-20251001`
 - **Strengths:** Fast response time, near-frontier intelligence, cost-effective
 - **Use Case:** Display operations, coordination overhead, data retrieval
 - **Trade-offs:** Lower reasoning than Opus/Sonnet, best for straightforward tasks
-- **Commands Using:** 5/17 (30%)
+- **Commands Using:** 5/18 (28%)
 
 ---
 
@@ -175,7 +178,7 @@ For complete decision methodology, scoring criteria, and detailed analysis, see:
 
 All model assignments have been validated against the decision matrix criteria:
 
-- **Completeness:** 17/17 commands have model assignments (100%)
+- **Completeness:** 18/18 commands have model assignments (100%)
 - **Correctness:** All model identifiers verified as valid Claude API names (100%)
 - **Consistency:** All assignments match documented tier categorization (100%)
 - **Validation Date:** 2025-12-16
@@ -226,7 +229,7 @@ This guide is currently stored in the solution directory. For permanent document
 
 ## Quick Lookup by Use Case
 
-**Need deep analytical reasoning?** → Use Opus 4.5 commands (new, plan, task, think, learn, learn-propose)
+**Need deep analytical reasoning?** → Use Opus 4.5 commands (new, plan, task, think, assess, learn, learn-propose)
 
 **Need structured execution?** → Use Sonnet 4.5 commands (setup, ready, run, verify, complete, learn-apply)
 
@@ -234,11 +237,11 @@ This guide is currently stored in the solution directory. For permanent document
 
 **Starting a new solution?** → new (Opus) → plan (Opus) → setup (Sonnet)
 
-**Executing tasks?** → ready (Sonnet) → run (Sonnet) → verify (Sonnet)
+**Executing tasks?** → ready (Sonnet) → run (Sonnet) → verify (Sonnet) → assess (Opus)
 
 **Checking status?** → status (Haiku) or list (Haiku)
 
-**Autonomous operation?** → auto (Haiku orchestrator)
+**Autonomous operation?** → auto (Haiku orchestrator with plan→act→assess→repeat loop)
 
 **Learning system?** → learn (Opus) → learn-propose (Opus) → learn-apply (Sonnet)
 
